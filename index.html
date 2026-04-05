@@ -772,21 +772,10 @@
       <div class="newsletter-form-card">
         <h3>Subscribe to Updates</h3>
         <p class="nl-sub">Enter your email below. Unsubscribe any time — no strings attached.</p>
-        <form
-  action="https://formspree.io/f/mykblzlj"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+        <div class="newsletter-email-row">
+          <input type="email" id="newsletter-email" placeholder="yourname@email.com" autocomplete="email">
+          <button onclick="handleNewsletter(event)">Subscribe &rarr;</button>
+        </div>
         <p class="newsletter-privacy">We respect your privacy. Your email is never shared or sold.</p>
         <div class="newsletter-success" id="newsletter-success">You're subscribed — thank you! Watch your inbox for updates from STRIVE PT.</div>
       </div>
