@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Neuro Wellness Program Las Vegas | STRIVE Physical Therapy</title>
+  <meta name="description" content="Neuro wellness classes and structured programs in Las Vegas including Neuro HIIT, agility training, obstacle work, strength and conditioning, and adapted mat Pilates.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://striveptlv.com/neuro-wellness.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://striveptlv.com/#business",
+        "name": "STRIVE Physical Therapy",
+        "url": "https://striveptlv.com/",
+        "description": "1-on-1 in-home stroke rehabilitation, vestibular rehabilitation, and neurological wellness programming in Las Vegas, Nevada.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Las Vegas",
+          "addressRegion": "NV",
+          "addressCountry": "US"
+        },
+        "areaServed": ["Las Vegas, NV","Summerlin, NV","Centennial Hills, NV","Skye Canyon, NV"],
+        "medicalSpecialty": ["Physical Therapy","Neurologic","Wellness Program"]
+      },
+      {
+        "@type": "Service",
+        "name": "Neuro Wellness Program",
+        "serviceType": "Neurological Wellness Program",
+        "provider": {"@id": "https://striveptlv.com/#business"},
+        "description": "Small-group classes and structured wellness programs for neurological strength, conditioning, balance, agility, and movement quality."
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --dark4: #2d2d2d;
+      --lime: #c8f000;
+      --lime-dim: #9fbe00;
+      --lime-pale: rgba(200,240,0,0.08);
+      --white: #f5f5f5;
+      --white-dim: rgba(245,245,245,0.65);
+      --white-faint: rgba(245,245,245,0.12);
+      --red: #ff3b30;
+      --border: rgba(255,255,255,0.08);
+      --border-lime: rgba(200,240,0,0.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+      padding-top: 68px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 68px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .logo-img { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
+    .logo-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      color: var(--white);
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+    .logo-sub {
+      font-family: 'Barlow', sans-serif;
+      font-size: 9px;
+      color: var(--lime);
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a {
+      color: var(--white-dim);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--lime); }
+    .nav-book {
+      background: var(--lime) !important;
+      color: var(--black) !important;
+      padding: 9px 20px;
+      border-radius: 2px;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+    }
+    .nav-book:hover { background: #deff00 !important; }
+
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 5px; padding: 22px 0; }
+    .nav-dropdown > a::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid rgba(245,245,245,0.4);
+      transition: transform 0.2s;
+    }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); border-top-color: var(--lime); }
+    .dropdown-menu {
+      opacity: 0; pointer-events: none;
+      position: absolute; top: 100%; right: 0;
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      min-width: 178px;
+      overflow: hidden;
+      text-align: center;
+      transition: opacity 0.15s;
+    }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a {
+      display: block;
+      color: var(--white-dim);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: var(--lime-pale); color: var(--lime); }
+
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 24px; height: 2px; background: var(--white); }
+
+    .mobile-menu {
+      display: none; flex-direction: column;
+      position: fixed; top: 68px; left: 0; right: 0; bottom: 0;
+      background: var(--dark);
+      z-index: 199;
+      padding: 32px 6vw;
+      overflow-y: auto;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--white-dim);
+      text-decoration: none;
+      font-size: 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--lime); }
+    .mob-book {
+      background: var(--lime) !important;
+      color: var(--black) !important;
+      text-align: center;
+      border-radius: 2px;
+      padding: 16px !important;
+      margin-top: 28px;
+      border: none !important;
+      font-weight: 700 !important;
+    }
+    .mob-dropdown { border-bottom: 1px solid var(--border); }
+    .mob-dropdown-toggle {
+      display: flex; justify-content: space-between; align-items: center;
+      color: var(--white-dim);
+      font-size: 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 16px 0;
+      cursor: pointer;
+    }
+    .mob-arrow { font-size: 20px; color: var(--lime); transition: transform 0.25s; }
+    .mob-arrow.open { transform: rotate(90deg); }
+    .mob-dropdown-items { display: none; flex-direction: column; padding-left: 16px; }
+    .mob-dropdown-items.open { display: flex; }
+    .mob-dropdown-items a { font-size: 15px !important; padding: 12px 0 !important; }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      background: var(--lime);
+      color: var(--black);
+      border: none;
+      padding: 16px 36px;
+      border-radius: 2px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #deff00; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(245,245,245,0.25);
+      padding: 16px 36px;
+      border-radius: 2px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--lime); color: var(--lime); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--black);
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 80px,
+          rgba(255,255,255,0.015) 80px,
+          rgba(255,255,255,0.015) 81px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 80px,
+          rgba(255,255,255,0.015) 80px,
+          rgba(255,255,255,0.015) 81px
+        );
+      padding: 100px 5vw 90px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-accent-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--lime);
+    }
+    .hero-slash {
+      position: absolute;
+      right: -60px; top: -40px;
+      width: 600px; height: 130%;
+      background: linear-gradient(135deg, rgba(200,240,0,0.04) 0%, transparent 55%);
+      transform: skewX(-12deg);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--lime-pale);
+      border: 1px solid var(--border-lime);
+      padding: 6px 16px;
+      border-radius: 2px;
+      font-size: 11px;
+      color: var(--lime);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--lime);
+      flex-shrink: 0;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(64px, 7vw, 104px);
+      line-height: 0.92;
+      color: var(--white);
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .hero h1 .accent { color: var(--lime); }
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--white-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      margin-top: 10px;
+    }
+    .hero-desc {
+      color: rgba(245,245,245,0.6);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 38px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 52px; }
+    .hero-trust { display: flex; gap: 32px; flex-wrap: wrap; }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--white-dim);
+    }
+    .trust-dot {
+      width: 4px; height: 4px;
+      background: var(--lime);
+      flex-shrink: 0;
+    }
+
+    /* Hero right — stat panel */
+    .hero-right {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--lime);
+    }
+    .hero-right-head {
+      padding: 18px 24px;
+      background: var(--lime-pale);
+      border-bottom: 1px solid var(--border);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--lime);
+      font-weight: 700;
+    }
+    .hero-dist-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-dist-item:last-child { border-bottom: none; }
+    .dist-icon {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border-lime);
+      background: var(--lime-pale);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .dist-icon svg { width: 16px; height: 16px; }
+    .dist-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.3px;
+      margin-bottom: 3px;
+    }
+    .dist-text span {
+      font-size: 12.5px;
+      color: var(--white-dim);
+      line-height: 1.55;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--lime);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+      background: var(--lime);
+      flex-shrink: 0;
+    }
+    .section-h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: 0.95;
+      color: var(--white);
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .section-h2 em { color: var(--lime); font-style: normal; }
+    .section-lead {
+      font-size: 15.5px;
+      color: var(--white-dim);
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 0;
+    }
+    .section-header { margin-bottom: 48px; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--lime);
+      padding: 0 5vw;
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      divide-color: transparent;
+    }
+    .stat-item {
+      padding: 28px 24px;
+      border-right: 1px solid rgba(0,0,0,0.15);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      color: var(--black);
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.6);
+      margin-top: 4px;
+    }
+
+    /* ── GROUP CLASSES ── */
+    .classes-section {
+      background: var(--dark);
+      padding: 96px 5vw;
+      border-top: 1px solid var(--border);
+    }
+    .classes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 0;
+      background: var(--border);
+    }
+
+    .class-card {
+      display: block;
+      text-decoration: none;
+      background: var(--dark);
+      overflow: hidden;
+      transition: background 0.2s;
+      position: relative;
+    }
+    .class-card:hover { background: var(--dark2); }
+    .class-card-head {
+      display: flex;
+      align-items: stretch;
+      min-height: 130px;
+    }
+    .class-accent {
+      width: 5px;
+      flex-shrink: 0;
+    }
+    .class-head-content {
+      flex: 1;
+      padding: 28px 28px 22px;
+    }
+    .class-type-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      margin-bottom: 8px;
+    }
+    .class-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--white);
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+    .class-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 1px;
+      border: 1px solid transparent;
+    }
+    .class-card-body {
+      padding: 20px 28px 28px;
+      border-top: 1px solid var(--border);
+    }
+    .class-card-body p {
+      color: var(--white-dim);
+      font-size: 14px;
+      line-height: 1.72;
+      margin-bottom: 20px;
+    }
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+    .focus-item {
+      padding: 12px 14px;
+    }
+    .focus-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .focus-value {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    /* Class color themes */
+    .lime-accent { background: var(--lime); }
+    .lime-badge { background: rgba(200,240,0,0.1); color: var(--lime); border-color: rgba(200,240,0,0.25); }
+    .lime-focus { background: rgba(200,240,0,0.05); }
+    .lime-focus .focus-label { color: var(--lime); }
+    .lime-focus .focus-value { color: var(--white); }
+
+    .orange-accent { background: #ff6b35; }
+    .orange-badge { background: rgba(255,107,53,0.12); color: #ff8c61; border-color: rgba(255,107,53,0.28); }
+    .orange-focus { background: rgba(255,107,53,0.06); }
+    .orange-focus .focus-label { color: #ff8c61; }
+
+    .blue-accent { background: #4fc3f7; }
+    .blue-badge { background: rgba(79,195,247,0.1); color: #7dd4fb; border-color: rgba(79,195,247,0.25); }
+    .blue-focus { background: rgba(79,195,247,0.05); }
+    .blue-focus .focus-label { color: #7dd4fb; }
+
+    .red-accent { background: var(--red); }
+    .red-badge { background: rgba(255,59,48,0.1); color: #ff6b62; border-color: rgba(255,59,48,0.25); }
+    .red-focus { background: rgba(255,59,48,0.05); }
+    .red-focus .focus-label { color: #ff6b62; }
+
+    /* ── DIVIDER BAND ── */
+    .divider-band {
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 5vw;
+      overflow: hidden;
+    }
+    .divider-ticker {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      white-space: nowrap;
+      animation: ticker 25s linear infinite;
+    }
+    .ticker-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+    .ticker-item::after {
+      content: '//';
+      color: var(--lime);
+      font-weight: 900;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── WELLNESS PROGRAMS ── */
+    .programs-section {
+      background: var(--black);
+      padding: 96px 5vw;
+      border-top: 1px solid var(--border);
+    }
+    .program-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+      margin-top: 0;
+    }
+    .program-card {
+      display: block;
+      text-decoration: none;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .program-card:hover { background: var(--dark2); }
+    .program-top-bar {
+      height: 4px;
+      width: 100%;
+    }
+    .program-inner { padding: 32px 30px; }
+    .program-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .program-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      line-height: 1;
+      color: var(--white);
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+    .program-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .program-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 1px;
+      border: 1px solid transparent;
+    }
+    .program-desc {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: var(--white-dim);
+      margin-bottom: 24px;
+    }
+    .program-pillars {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+    .pillar {
+      padding: 14px 14px 13px;
+    }
+    .pillar-title {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+    .pillar-desc {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    .green-bar { background: var(--lime); }
+    .program-card.green .program-eyebrow { color: var(--lime); }
+    .program-card.green .pillar { background: rgba(200,240,0,0.05); }
+    .program-card.green .pillar-title { color: var(--lime); }
+    .program-card.green .program-tag { background: rgba(200,240,0,0.1); color: var(--lime); border-color: rgba(200,240,0,0.25); }
+
+    .teal-bar { background: #4fc3f7; }
+    .program-card.blue .program-eyebrow { color: #7dd4fb; }
+    .program-card.blue .pillar { background: rgba(79,195,247,0.05); }
+    .program-card.blue .pillar-title { color: #7dd4fb; }
+    .program-card.blue .program-tag { background: rgba(79,195,247,0.1); color: #7dd4fb; border-color: rgba(79,195,247,0.25); }
+
+    /* ── WHO IT'S FOR ── */
+    .fit-section {
+      background: var(--dark2);
+      padding: 96px 5vw;
+      border-top: 1px solid var(--border);
+    }
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+      margin-top: 48px;
+    }
+    .fit-card {
+      background: var(--dark);
+      padding: 40px 36px;
+      border-top: 3px solid var(--lime);
+    }
+    .fit-card.alt { border-top-color: #4fc3f7; }
+    .fit-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .fit-card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .fit-card li {
+      font-size: 14.5px;
+      color: var(--white-dim);
+      line-height: 1.6;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .fit-card li::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--lime);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .fit-card.alt li::before { background: #4fc3f7; }
+
+    /* ── FAQ ── */
+    .faq-section {
+      background: var(--dark);
+      padding: 96px 5vw;
+      border-top: 1px solid var(--border);
+    }
+    .faq-grid {
+      max-width: 800px;
+      margin: 56px auto 0;
+    }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      padding: 22px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.2px;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--lime); }
+    .faq-arrow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--lime);
+      flex-shrink: 0;
+      transition: transform 0.25s;
+      line-height: 1;
+    }
+    .faq-arrow.open { transform: rotate(45deg); }
+    .faq-a {
+      display: none;
+      padding: 0 0 22px;
+      font-size: 14.5px;
+      color: var(--white-dim);
+      line-height: 1.8;
+    }
+    .faq-a.open { display: block; }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--dark2);
+      padding: 96px 5vw;
+      border-top: 1px solid var(--border);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 2px;
+      background: var(--border);
+      margin-top: 52px;
+    }
+    .contact-info-panel,
+    .contact-form-panel {
+      background: var(--dark);
+      padding: 40px 36px;
+    }
+    .contact-info-panel { border-top: 3px solid var(--lime); }
+    .contact-form-panel { border-top: 3px solid #4fc3f7; }
+    .contact-info-panel h3,
+    .contact-form-panel h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+    .contact-copy,
+    .form-subtitle {
+      color: var(--white-dim);
+      font-size: 14.5px;
+      line-height: 1.75;
+      margin-bottom: 28px;
+      max-width: 560px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .c-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--lime);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .c-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 4px;
+    }
+    .c-text span {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--white-dim);
+    }
+    .book-cta-box {
+      margin-top: 30px;
+      padding: 22px 22px 24px;
+      background: var(--dark2);
+      border: 1px solid var(--border);
+    }
+    .book-cta-box p {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--white-dim);
+      margin-bottom: 16px;
+    }
+    .book-cta-box strong { color: var(--white); }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 7px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      background: var(--dark2);
+      color: var(--white);
+      border-radius: 2px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(245,245,245,0.35); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--lime);
+      background: #1f1f1f;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--lime);
+      color: var(--black);
+      border: none;
+      border-radius: 2px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 4px;
+    }
+    .form-submit:hover {
+      background: #deff00;
+      transform: translateY(-1px);
+    }
+    .form-foot-note {
+      font-size: 12px;
+      color: rgba(245,245,245,0.45);
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+    .contact-success {
+      display: none;
+      margin-top: 14px;
+      color: var(--lime);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--lime);
+      padding: 100px 5vw;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-bg-text {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(100px, 20vw, 220px);
+      color: rgba(0,0,0,0.06);
+      letter-spacing: 8px;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+    .cta-inner { position: relative; z-index: 2; }
+    .cta-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.55);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .cta-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 0.95;
+      color: var(--black);
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+    .cta-section > .cta-inner > p {
+      color: rgba(0,0,0,0.6);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 580px;
+      margin: 0 auto 40px;
+    }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-btn-dark {
+      background: var(--black);
+      color: var(--lime);
+      border: none;
+      padding: 18px 40px;
+      border-radius: 2px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-btn-dark:hover { background: #111; transform: translateY(-2px); }
+    .cta-btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 2px solid rgba(0,0,0,0.3);
+      padding: 16px 38px;
+      border-radius: 2px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cta-btn-outline:hover { border-color: var(--black); background: rgba(0,0,0,0.08); }
+    .cta-trust {
+      margin-top: 44px;
+      display: flex; gap: 36px;
+      justify-content: center; flex-wrap: wrap;
+    }
+    .cta-trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.5);
+    }
+    .cta-trust-dot { width: 4px; height: 4px; background: var(--black); flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 72px 5vw 32px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-brand p {
+      color: rgba(245,245,245,0.4);
+      font-size: 13.5px;
+      line-height: 1.8;
+      margin-top: 18px;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--lime);
+      margin-bottom: 20px;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(245,245,245,0.45);
+      font-size: 13.5px;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--lime); }
+    .footer-bottom {
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: rgba(245,245,245,0.25);
+      font-size: 12px;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .anim { opacity: 0; }
+    .anim.visible { animation: fadeUp 0.6s ease forwards; }
+    .d1 { animation-delay: 0.08s; }
+    .d2 { animation-delay: 0.16s; }
+    .d3 { animation-delay: 0.26s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-right { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .classes-grid { grid-template-columns: 1fr; }
+      .program-grid { grid-template-columns: 1fr; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 72px 6vw 80px; }
+      .classes-section, .programs-section, .fit-section,
+      .faq-section, .contact-section, .cta-section { padding: 72px 5vw; }
+      .focus-grid, .program-pillars { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .hero-actions { width: 100%; }
+      .hero-actions a, .cta-actions a { width: 100%; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-info-panel, .contact-form-panel { padding: 28px 22px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .class-name { font-size: 28px; }
+      .program-name { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="STRIVE PT Logo" class="logo-img">
+    <div>
+      <div class="logo-text">STRIVE</div>
+      <div class="logo-sub">Physical Therapy · Las Vegas</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <a href="homepage-redesign.html#services">Services</a>
+      <div class="dropdown-menu">
+        <a href="neuro-wellness-redesign.html">Neuro Wellness</a>
+        <a href="stroke-rehab-redesign.html">Stroke Rehab</a>
+        <a href="vestibular-rehab-redesign.html">Vestibular Rehab</a>
+      </div>
+    </div>
+    <a href="homepage-redesign.html#providers">Our Team</a>
+    <a href="homepage-redesign.html#providers">About Us</a>
+    <div class="nav-dropdown">
+      <a href="#">Patient Resource</a>
+      <div class="dropdown-menu">
+        <a href="insights/">Blog</a>
+        <a href="https://open.spotify.com/show/2nbFBV45QpM37SAdHtobgF?si=Gns3Ft-7SgCNdGbmnOcpag" target="_blank" rel="noopener">Podcast</a>
+        <a href="https://striveptlv.com/moneymanagement/">Online Bill Pay</a>
+        <a href="https://striveptlv.com/patient-resource/">Home Modifications</a>
+      </div>
+    </div>
+    <a href="https://striveptlv.janeapp.com" target="_blank" rel="noopener" class="nav-book">Book Now</a>
+  </div>
+  <div class="nav-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="homepage-redesign.html" onclick="toggleMenu(false)">Home</a>
+  <a href="neuro-wellness-redesign.html" onclick="toggleMenu(false)">Neuro Wellness</a>
+  <a href="stroke-rehab-redesign.html" onclick="toggleMenu(false)">Stroke Rehab</a>
+  <a href="vestibular-rehab-redesign.html" onclick="toggleMenu(false)">Vestibular Rehab</a>
+  <a href="homepage-redesign.html#providers" onclick="toggleMenu(false)">Our Team</a>
+  <a href="homepage-redesign.html#providers" onclick="toggleMenu(false)">About Us</a>
+  <div class="mob-dropdown">
+    <div class="mob-dropdown-toggle" onclick="toggleMobileDropdown('patientResourceItems', this.querySelector('.mob-arrow'))">
+      Patient Resource <span class="mob-arrow">›</span>
+    </div>
+    <div class="mob-dropdown-items" id="patientResourceItems">
+      <a href="insights/" onclick="toggleMenu(false)">Blog</a>
+      <a href="https://open.spotify.com/show/2nbFBV45QpM37SAdHtobgF?si=Gns3Ft-7SgCNdGbmnOcpag" target="_blank" rel="noopener">Podcast</a>
+      <a href="https://striveptlv.com/moneymanagement/" onclick="toggleMenu(false)">Online Bill Pay</a>
+      <a href="https://striveptlv.com/patient-resource/" onclick="toggleMenu(false)">Home Modifications</a>
+    </div>
+  </div>
+  <a href="https://striveptlv.janeapp.com" target="_blank" rel="noopener" class="mob-book" onclick="toggleMenu(false)">Book an Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-accent-bar"></div>
+  <div class="hero-slash"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow anim">Neuro Wellness · Las Vegas, NV</div>
+      <h1 class="anim d1">NEURO<br><span class="accent">WELLNESS</span></h1>
+      <p class="hero-sub anim d1">Train beyond traditional therapy</p>
+      <p class="hero-desc anim d2">Small-group neurological fitness built around intensity, precision, and progressive training. Six offerings designed to push your nervous system — from high-output HIIT to ongoing strength cycles and restorative Pilates programs.</p>
+      <div class="hero-actions anim d2">
+        <a href="#group-classes" class="btn-primary">View Classes</a>
+        <a href="#wellness-programs" class="btn-outline">See Programs</a>
+      </div>
+      <div class="hero-trust anim d3">
+        <span class="trust-item"><span class="trust-dot"></span>Small Groups</span>
+        <span class="trust-item"><span class="trust-dot"></span>Adaptive Formats</span>
+        <span class="trust-item"><span class="trust-dot"></span>Progressive Loading</span>
+        <span class="trust-item"><span class="trust-dot"></span>Neuro-Focused</span>
+      </div>
+    </div>
+
+    <div class="hero-right anim d2">
+      <div class="hero-right-head">Program Snapshot</div>
+      <div class="hero-dist-item">
+        <div class="dist-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8f000" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="dist-text">
+          <strong>4 Group Classes</strong>
+          <span>HIIT, agility, modified circuit, and obstacle course — all built for the neuro population.</span>
+        </div>
+      </div>
+      <div class="hero-dist-item">
+        <div class="dist-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8f000" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h9"/><circle cx="18" cy="17" r="3"/></svg>
+        </div>
+        <div class="dist-text">
+          <strong>2 Wellness Programs</strong>
+          <span>Strength & conditioning and adapted Pilates — ongoing, periodized, progressive.</span>
+        </div>
+      </div>
+      <div class="hero-dist-item">
+        <div class="dist-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8f000" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="dist-text">
+          <strong>All Ambulatory Levels</strong>
+          <span>From high-level conditioning to adapted support — a level for every client.</span>
+        </div>
+      </div>
+      <div class="hero-dist-item">
+        <div class="dist-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8f000" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="dist-text">
+          <strong>Clinically Driven</strong>
+          <span>BDNF, neuroplasticity, motor recruitment — every session has a science-backed purpose.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Training Formats</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4–5</div>
+      <div class="stat-label">Max Group Size</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Minutes Per Session</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Neuro-Focused</div>
+    </div>
+  </div>
+</div>
+
+<!-- GROUP CLASSES -->
+<section class="classes-section" id="group-classes">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label anim">Group Classes</div>
+      <h2 class="section-h2 anim d1">GROUP<br><em>CLASS FORMATS</em></h2>
+      <p class="section-lead anim d2">Four high-output small-group classes built for neurological populations. Each has a defined training goal, intensity tier, and maximum group size so every session stays focused and effective.</p>
+    </div>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:0 5vw;">
+    <div class="classes-grid">
+
+      <!-- HIIT -->
+      <a class="class-card anim" href="https://striveptlv.janeapp.com" target="_blank" rel="noopener">
+        <div class="class-card-head">
+          <div class="class-accent lime-accent"></div>
+          <div class="class-head-content">
+            <div class="class-type-label">10:30 – 11:20 · 50 min</div>
+            <h3 class="class-name">Neuro HIIT</h3>
+            <div class="class-meta">
+              <span class="badge lime-badge">Ambulatory</span>
+              <span class="badge lime-badge">Max 5</span>
+              <span class="badge lime-badge">High Intensity</span>
+            </div>
+          </div>
+        </div>
+        <div class="class-card-body">
+          <p>High-intensity intervals programmed to spike BDNF and drive neuroplasticity. Alternates cardio bursts, resistance work, and active rest to build endurance and promote lasting neural adaptation.</p>
+          <div class="focus-grid">
+            <div class="focus-item lime-focus">
+              <div class="focus-label">Primary Goal</div>
+              <div class="focus-value">BDNF & neuroplasticity</div>
+            </div>
+            <div class="focus-item lime-focus">
+              <div class="focus-label">Strength</div>
+              <div class="focus-value">Full-body functional loading</div>
+            </div>
+            <div class="focus-item lime-focus">
+              <div class="focus-label">Cardio</div>
+              <div class="focus-value">Aerobic & anaerobic capacity</div>
+            </div>
+            <div class="focus-item lime-focus">
+              <div class="focus-label">Format</div>
+              <div class="focus-value">Intervals with active rest</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- AGILITY -->
+      <a class="class-card anim d1" href="https://striveptlv.janeapp.com" target="_blank" rel="noopener">
+        <div class="class-card-head">
+          <div class="class-accent orange-accent"></div>
+          <div class="class-head-content">
+            <div class="class-type-label">11:30 – 12:20 · 50 min</div>
+            <h3 class="class-name">Agility & Reaction</h3>
+            <div class="class-meta">
+              <span class="badge orange-badge">Ambulatory</span>
+              <span class="badge orange-badge">Advanced Balance</span>
+              <span class="badge orange-badge">High Level</span>
+            </div>
+          </div>
+        </div>
+        <div class="class-card-body">
+          <p>Dynamic coordination and speed work — foot drills, reactive cuing, and plyometric progressions designed to retrain the nervous system's quickness, precision, and balance under pressure.</p>
+          <div class="focus-grid">
+            <div class="focus-item orange-focus">
+              <div class="focus-label">Foot Drills</div>
+              <div class="focus-value">Ladder & directional patterns</div>
+            </div>
+            <div class="focus-item orange-focus">
+              <div class="focus-label">Reaction Time</div>
+              <div class="focus-value">Visual & auditory cues</div>
+            </div>
+            <div class="focus-item orange-focus">
+              <div class="focus-label">Plyometrics</div>
+              <div class="focus-value">Power & landing control</div>
+            </div>
+            <div class="focus-item orange-focus">
+              <div class="focus-label">Balance</div>
+              <div class="focus-value">Single-leg & perturbations</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- MODIFIED CIRCUIT -->
+      <a class="class-card anim" href="https://striveptlv.janeapp.com" target="_blank" rel="noopener">
+        <div class="class-card-head">
+          <div class="class-accent blue-accent"></div>
+          <div class="class-head-content">
+            <div class="class-type-label">1:00 – 1:50 · 50 min</div>
+            <h3 class="class-name">Modified Circuit</h3>
+            <div class="class-meta">
+              <span class="badge blue-badge">Limited Ambulatory</span>
+              <span class="badge blue-badge">Max 4</span>
+              <span class="badge blue-badge">Adapted</span>
+            </div>
+          </div>
+        </div>
+        <div class="class-card-body">
+          <p>Adapted circuit stations targeting transfer mechanics, standing endurance, single-leg loading, and core control. Every station is individually adjusted so each client trains at their personal edge.</p>
+          <div class="focus-grid">
+            <div class="focus-item blue-focus">
+              <div class="focus-label">Transfers</div>
+              <div class="focus-value">Sit-to-stand mechanics</div>
+            </div>
+            <div class="focus-item blue-focus">
+              <div class="focus-label">Standing</div>
+              <div class="focus-value">Graded endurance work</div>
+            </div>
+            <div class="focus-item blue-focus">
+              <div class="focus-label">Single Leg</div>
+              <div class="focus-value">Weight shift & loading</div>
+            </div>
+            <div class="focus-item blue-focus">
+              <div class="focus-label">Core</div>
+              <div class="focus-value">Seated & supported stability</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- OBSTACLE COURSE -->
+      <a class="class-card anim d1" href="https://striveptlv.janeapp.com" target="_blank" rel="noopener">
+        <div class="class-card-head">
+          <div class="class-accent red-accent"></div>
+          <div class="class-head-content">
+            <div class="class-type-label">2:00 – 2:50 · 50 min</div>
+            <h3 class="class-name">Obstacle Course</h3>
+            <div class="class-meta">
+              <span class="badge red-badge">Household Ambulator</span>
+              <span class="badge red-badge">Max 4</span>
+              <span class="badge red-badge">Real-World</span>
+            </div>
+          </div>
+        </div>
+        <div class="class-card-body">
+          <p>Controlled obstacle environments recreating real life — uneven terrain, curbs, transitions, and dual-task demands. The bridge from clinic to community independence, built for household and limited community ambulators.</p>
+          <div class="focus-grid">
+            <div class="focus-item red-focus">
+              <div class="focus-label">Terrain</div>
+              <div class="focus-value">Uneven & narrow surfaces</div>
+            </div>
+            <div class="focus-item red-focus">
+              <div class="focus-label">Dual Task</div>
+              <div class="focus-value">Cognitive + motor demands</div>
+            </div>
+            <div class="focus-item red-focus">
+              <div class="focus-label">Community Prep</div>
+              <div class="focus-value">Curbs, ramps, transitions</div>
+            </div>
+            <div class="focus-item red-focus">
+              <div class="focus-label">Safety</div>
+              <div class="focus-value">Confidence & fall reduction</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- TICKER DIVIDER -->
+<div class="divider-band">
+  <div class="divider-ticker">
+    <span class="ticker-item">Neuroplasticity</span>
+    <span class="ticker-item">BDNF Training</span>
+    <span class="ticker-item">Motor Recruitment</span>
+    <span class="ticker-item">Progressive Overload</span>
+    <span class="ticker-item">Functional Strength</span>
+    <span class="ticker-item">Community Mobility</span>
+    <span class="ticker-item">Neuroplasticity</span>
+    <span class="ticker-item">BDNF Training</span>
+    <span class="ticker-item">Motor Recruitment</span>
+    <span class="ticker-item">Progressive Overload</span>
+    <span class="ticker-item">Functional Strength</span>
+    <span class="ticker-item">Community Mobility</span>
+  </div>
+</div>
+
+<!-- WELLNESS PROGRAMS -->
+<section class="programs-section" id="wellness-programs">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label anim">Wellness Programs</div>
+      <h2 class="section-h2 anim d1">ONGOING<br><em>PROGRAMS</em></h2>
+      <p class="section-lead anim d2">Not drop-in classes — structured programs you enroll in. Progressive, periodized, and built around long-term neurological development. These run alongside any class schedule.</p>
+    </div>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:0 5vw;">
+    <div class="program-grid">
+
+      <!-- S&C -->
+      <a class="program-card green anim" href="https://striveptlv.janeapp.com" target="_blank" rel="noopener">
+        <div class="program-top-bar green-bar"></div>
+        <div class="program-inner">
+          <div class="program-eyebrow">Wellness Program · 3:00 – 3:50 · All ambulatory levels</div>
+          <h3 class="program-name">Neuro Strength &amp; Conditioning</h3>
+          <div class="program-meta">
+            <span class="program-tag">Progressive Enrollment</span>
+            <span class="program-tag">Individualized Loading</span>
+            <span class="program-tag">4–8 Week Cycles</span>
+          </div>
+          <p class="program-desc">A periodized resistance program engineered for neurological populations. Clients enroll and follow a progressive plan that evolves week over week — building true strength, improving motor unit firing, and combating spasticity-related weakness through load, tension, and deliberate movement. Not a class. A program.</p>
+          <div class="program-pillars">
+            <div class="pillar">
+              <div class="pillar-title">Progressive Overload</div>
+              <div class="pillar-desc">Load increases systematically each week</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Motor Recruitment</div>
+              <div class="pillar-desc">Neuromuscular activation & timing</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Functional Patterns</div>
+              <div class="pillar-desc">Push, pull, hinge, squat, carry</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Spasticity Support</div>
+              <div class="pillar-desc">Eccentric loading & lengthening work</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Conditioning</div>
+              <div class="pillar-desc">Work capacity via circuit density</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Program Cycles</div>
+              <div class="pillar-desc">4–8 weeks with reassessment</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- PILATES -->
+      <a class="program-card blue anim d1" href="https://striveptlv.janeapp.com" target="_blank" rel="noopener">
+        <div class="program-top-bar teal-bar"></div>
+        <div class="program-inner">
+          <div class="program-eyebrow">Wellness Program · 4:00 – 5:00 · All neurological profiles</div>
+          <h3 class="program-name">Adapted Mat Pilates</h3>
+          <div class="program-meta">
+            <span class="program-tag">Ongoing Enrollment</span>
+            <span class="program-tag">Mind-Body Focus</span>
+            <span class="program-tag">Rolling Progression</span>
+          </div>
+          <p class="program-desc">A restorative wellness program — not a drop-in session. Clients join a continuing program with individualized Pilates sequences adapted to their neurological profile. Breath-synchronized movement, deep core recruitment, and proprioceptive training that builds the neuromuscular foundation amplifying every other session in the schedule.</p>
+          <div class="program-pillars">
+            <div class="pillar">
+              <div class="pillar-title">Deep Core</div>
+              <div class="pillar-desc">Transverse abdominis & pelvic floor</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Breathwork</div>
+              <div class="pillar-desc">Diaphragmatic breath & movement</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Spinal Alignment</div>
+              <div class="pillar-desc">Postural & segmental correction</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Proprioception</div>
+              <div class="pillar-desc">Body awareness & motor control</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Nervous System</div>
+              <div class="pillar-desc">Parasympathetic activation & calm</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Structure</div>
+              <div class="pillar-desc">Rolling individualized sequencing</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="fit-section" id="who-its-for">
+  <div class="section-inner">
+    <div class="section-label anim">Who It Fits</div>
+    <h2 class="section-h2 anim d1">IS THIS<br><em>FOR YOU?</em></h2>
+
+    <div class="fit-grid">
+      <div class="fit-card anim">
+        <h3>YOU'RE READY IF YOU WANT...</h3>
+        <ul>
+          <li>Structured neurological training that goes beyond traditional PT</li>
+          <li>Small-group intensity with a defined purpose and level</li>
+          <li>Options from high-output conditioning to restorative movement</li>
+          <li>Programs built around balance, strength, endurance, and mobility</li>
+          <li>A progressive, professional wellness experience — not a clinical appointment</li>
+        </ul>
+      </div>
+      <div class="fit-card alt anim d1">
+        <h3>BUILT TO ACCOMMODATE...</h3>
+        <ul>
+          <li>Ambulatory clients ready for high-intensity neurological challenge</li>
+          <li>Clients targeting agility, reaction speed, and advanced balance</li>
+          <li>Limited ambulatory clients who need adapted support and progressions</li>
+          <li>Household ambulators preparing to re-enter community life</li>
+          <li>Anyone who benefits from ongoing program-based periodized training</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-label anim">Common Questions</div>
+    <h2 class="section-h2 anim d1">NEURO WELLNESS<br><em>FAQS</em></h2>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What makes this different from regular physical therapy?
+          <span class="faq-arrow">+</span>
+        </div>
+        <div class="faq-a">Traditional PT focuses on impairment-level treatment in a 1-on-1 setting. The Neuro Wellness Program is built for clients who've moved past that stage and want structured, progressive group training — similar to what a performance athlete would pursue after recovering from an injury. The focus is on building capacity, not just restoring function.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do I know which class or program is right for my level?
+          <span class="faq-arrow">+</span>
+        </div>
+        <div class="faq-a">Each offering is labeled with an ambulatory level — from high-level ambulatory to limited household ambulator. During your intake, a STRIVE therapist will assess your capacity and place you in the appropriate class or program. Some clients attend multiple offerings across the week at different intensity tiers.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What's the difference between a "class" and a "wellness program"?
+          <span class="faq-arrow">+</span>
+        </div>
+        <div class="faq-a">Classes are scheduled group sessions you can attend on an ongoing basis — they follow a consistent structure with variation each session. Wellness programs (Neuro Strength & Conditioning and Adapted Mat Pilates) are structured cycles: you enroll, follow a periodized plan, and progress week over week toward defined goals. Programs require an intake and are not drop-in.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Why are groups kept so small?
+          <span class="faq-arrow">+</span>
+        </div>
+        <div class="faq-a">Neurological training requires precision. Small groups (4–5 max) allow the therapist to monitor movement quality, provide appropriate cueing, and adjust loading or assistance in real time — things that simply aren't possible in large fitness classes. Every client gets meaningful attention in every session.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I need to be referred by a physician?
+          <span class="faq-arrow">+</span>
+        </div>
+        <div class="faq-a">Physician referral is not required to participate in the Neuro Wellness Program. However, all clients complete a STRIVE intake screening before joining any class or program to ensure appropriate placement and safety. Contact us to schedule your screening appointment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="section-label anim">Get In Touch</div>
+    <h2 class="section-h2 anim d1">READY TO<br><em>CONNECT?</em></h2>
+    <p class="section-lead anim d2">Use the same contact pathway as the homepage without leaving this redesign. Ask a question, request a callback, or join the notification list for the outpatient neuro movement gym.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info-panel anim">
+        <h3>WE'RE HERE TO HELP</h3>
+        <p class="contact-copy">Not sure where to start, want to talk before booking, or have a question about which class or program fits your level? Send us a message and we will get back to you promptly.</p>
+
+        <div class="contact-detail">
+          <div class="c-dot"></div>
+          <div class="c-text">
+            <strong>Las Vegas Service Area</strong>
+            <span>Las Vegas · Skye Canyon · Centennial Hills · Summerlin &amp; surrounding communities, NV</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="c-dot"></div>
+          <div class="c-text">
+            <strong>Phone / Text</strong>
+            <span>Call or text us for screening questions, class fit, and scheduling guidance.</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="c-dot"></div>
+          <div class="c-text">
+            <strong>Scheduling Hours</strong>
+            <span>Flexible availability with responses typically within one business day.</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="c-dot"></div>
+          <div class="c-text">
+            <strong>Outpatient Neuro Movement Gym</strong>
+            <span>Coming soon · use the form to join our notification list for opening updates.</span>
+          </div>
+        </div>
+
+        <div class="book-cta-box">
+          <p><strong>Ready to book?</strong> Skip the form and schedule directly through JaneApp for the fastest path to an intake or screening appointment.</p>
+          <a href="https://striveptlv.janeapp.com" target="_blank" rel="noopener" class="btn-primary">Book via JaneApp</a>
+        </div>
+      </div>
+
+      <div class="contact-form-panel anim d1">
+        <h3>SEND A MESSAGE</h3>
+        <p class="form-subtitle">For general questions, callback requests, neuro wellness screening questions, or outpatient gym updates.</p>
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="first_name" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="(702) 555-0000">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="jane@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Contact Me Thru</label>
+            <select name="contact_preference">
+              <option value="">Select an option...</option>
+              <option>Phone Call</option>
+              <option>Text</option>
+              <option>Email</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Please do not include sensitive medical information. This form is for general inquiries only."></textarea>
+          </div>
+          <button class="form-submit" type="submit">Send Message &rarr;</button>
+          <p class="form-foot-note">We typically respond within one business day. For faster scheduling, use JaneApp above.</p>
+          <div class="contact-success" id="contact-success">Thank you. We received your message and will respond within one business day.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg-text">STRIVE</div>
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Neuro Wellness · Las Vegas</div>
+    <h2>READY TO<br>TRAIN DIFFERENTLY?</h2>
+    <p>Start with a screening appointment. We'll assess your capacity, explain your options, and place you in the right class or program from day one.</p>
+    <div class="cta-actions">
+      <a href="#contact" class="cta-btn-dark">Request Program Details</a>
+      <a href="#group-classes" class="cta-btn-outline">Review All Classes</a>
+    </div>
+    <div class="cta-trust">
+      <span class="cta-trust-item"><span class="cta-trust-dot"></span>Licensed Physical Therapists</span>
+      <span class="cta-trust-item"><span class="cta-trust-dot"></span>Small Groups Only</span>
+      <span class="cta-trust-item"><span class="cta-trust-dot"></span>Intake Required</span>
+      <span class="cta-trust-item"><span class="cta-trust-dot"></span>Las Vegas, NV</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="https://striveptlv.com" class="nav-logo">
+          <img src="logo.png" alt="STRIVE PT Logo" class="logo-img">
+          <div>
+            <div class="logo-text">STRIVE</div>
+            <div class="logo-sub">Physical Therapy · Las Vegas</div>
+          </div>
+        </a>
+        <p>Stroke, vestibular, and neurological wellness services in Las Vegas. Small groups. Progressive training. Licensed physical therapists.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Neuro Wellness</h4>
+        <a href="#group-classes">Group Classes</a>
+        <a href="#wellness-programs">Wellness Programs</a>
+        <a href="#who-its-for">Who It's For</a>
+        <a href="#faq">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="stroke-rehab.html">Stroke Rehab</a>
+        <a href="vestibular-rehab-redesign.html">Vestibular Rehab</a>
+        <a href="neuro-wellness.html">Neuro Wellness</a>
+        <a href="index.html#services">Wellness Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Las Vegas</h4>
+        <a href="#contact">Contact Us</a>
+        <a href="index.html#providers">Our Team</a>
+        <a href="index.html#faq">General FAQ</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="insights/">Insights Archive</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 STRIVE Physical Therapy &middot; Las Vegas, NV &middot; All rights reserved.</span>
+      <span>Licensed Physical Therapists &middot; State of Nevada</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(forceState) {
+    const menu = document.getElementById('mobileMenu');
+    const shouldOpen = typeof forceState === 'boolean'
+      ? forceState
+      : !menu.classList.contains('open');
+    menu.classList.toggle('open', shouldOpen);
+  }
+  function toggleMobileDropdown(itemsId, arrowEl) {
+    document.getElementById(itemsId).classList.toggle('open');
+    if (arrowEl) arrowEl.classList.toggle('open');
+  }
+  function toggleFaq(el) {
+    const answer = el.nextElementSibling;
+    const arrow = el.querySelector('.faq-arrow');
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-arrow').forEach(a => a.classList.remove('open'));
+    if (!isOpen) { answer.classList.add('open'); arrow.classList.add('open'); }
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.07 });
+
+  document.querySelectorAll('.anim').forEach((el) => {
+    if (!el.closest('.hero')) observer.observe(el);
+  });
+  document.querySelectorAll('.hero .anim').forEach((el) => {
+    setTimeout(() => el.classList.add('visible'), 100);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 960) toggleMenu(false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') toggleMenu(false);
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const data = {
+      first_name: form.first_name.value,
+      last_name: form.last_name.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      contact_preference: form.contact_preference.value,
+      message: form.message.value
+    };
+    await fetch('https://formspree.io/f/mlgoanwr', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    form.reset();
+    document.getElementById('contact-success').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
