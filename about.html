@@ -154,6 +154,134 @@
       color: rgba(15,30,46,0.68) !important;
     }
     .mob-dropdown-items a:last-child { border-bottom: none !important; }
+    .schedule-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 240;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(8,12,14,0.42);
+      backdrop-filter: blur(8px);
+    }
+    .schedule-modal.open { display: flex; }
+    .schedule-dialog {
+      position: relative;
+      width: min(100%, 520px);
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      box-shadow: 0 28px 64px rgba(15,30,46,0.14);
+      padding: 30px 28px 26px;
+    }
+    .schedule-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--white);
+      font: inherit;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .schedule-close:hover { background: var(--lime-pale); }
+    .schedule-kicker {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 12px;
+    }
+    .schedule-dialog h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 5vw, 44px);
+      line-height: 0.96;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .schedule-dialog p {
+      color: var(--white-dim);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 22px;
+      max-width: 420px;
+    }
+    .schedule-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .schedule-option {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      min-height: 190px;
+      padding: 22px 20px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      background: var(--dark3);
+      transition: border-color 0.2s, transform 0.15s, background 0.2s;
+    }
+    .schedule-option > div {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .schedule-option:hover {
+      border-color: var(--border-mid);
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+    .schedule-option-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+      color: var(--lime);
+    }
+    .schedule-option h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      line-height: 0.98;
+      color: var(--white);
+      margin: 10px 0 8px;
+    }
+    .schedule-option p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--white-dim);
+    }
+    .schedule-option strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .schedule-option:hover h3,
+    .schedule-option:hover strong { color: var(--lime); }
+    .schedule-contact {
+      margin-top: -8px;
+      margin-bottom: 22px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: var(--white);
+    }
 
     /* ── SHARED HELPERS ── */
     .section-label {
@@ -488,9 +616,13 @@
       .pt-left { border-right: none; border-bottom: 1px solid var(--border); }
       .pt-photo-wrap { max-height: 280px; aspect-ratio: unset; }
       .values-grid { grid-template-columns: 1fr 1fr; }
+      .schedule-options { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
     @media (max-width: 640px) {
+      .schedule-modal { padding: 14px; }
+      .schedule-dialog { padding: 26px 20px 20px; }
+      .schedule-option { min-height: 0; }
       .hero { padding: 72px 6vw 76px; }
       .providers-section, .values-section, .cta-section { padding: 72px 5vw; }
       .pt-right { padding: 24px 22px; }
@@ -523,7 +655,7 @@
       </div>
     </div>
     <a href="about.html" style="color:#0d6e8a">Our Team</a>
-    <a href="https://striveptlv.janeapp.com" target="_blank" rel="noopener">Scheduling</a>
+    <a href="#scheduling" data-schedule-trigger>Scheduling</a>
     <div class="nav-dropdown">
       <a href="#">Patient Resource</a>
       <div class="dropdown-menu">
@@ -533,7 +665,7 @@
         <a href="https://striveptlv.com/patient-resource/">Home Modifications</a>
       </div>
     </div>
-    <a href="index.html#booking" class="nav-book">Book Now</a>
+    <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener" class="nav-book">Book Now</a>
   </div>
   <div class="nav-toggle" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -546,7 +678,7 @@
   <a href="stroke-rehab.html" onclick="toggleMenu(false)">Stroke Rehab</a>
   <a href="vestibular-rehab.html" onclick="toggleMenu(false)">Vestibular Rehab</a>
   <a href="about.html" onclick="toggleMenu(false)">Our Team</a>
-  <a href="https://striveptlv.janeapp.com" target="_blank" rel="noopener" onclick="toggleMenu(false)">Scheduling</a>
+  <a href="#scheduling" data-schedule-trigger onclick="toggleMenu(false)">Scheduling</a>
   <div class="mob-dropdown">
     <div class="mob-dropdown-toggle" onclick="toggleMobileDropdown('patientResourceItems', this.querySelector('.mob-arrow'))">
       Patient Resource <span class="mob-arrow">›</span>
@@ -558,7 +690,35 @@
       <a href="https://striveptlv.com/patient-resource/" onclick="toggleMenu(false)">Home Modifications</a>
     </div>
   </div>
-  <a href="index.html#booking" class="mob-book" onclick="toggleMenu(false)">Book an Appointment</a>
+  <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener" class="mob-book" onclick="toggleMenu(false)">Book an Appointment</a>
+</div>
+
+<div class="schedule-modal" id="scheduleModal" aria-hidden="true">
+  <div class="schedule-dialog" role="dialog" aria-modal="true" aria-labelledby="scheduleTitle">
+    <button type="button" class="schedule-close" aria-label="Close scheduling options" data-schedule-close>&times;</button>
+    <div class="schedule-kicker">Scheduling</div>
+    <h2 id="scheduleTitle">Are you a new client or a returning client?</h2>
+    <p>Choose the option that matches where you are in the process, and we’ll send you to the right scheduling page.</p>
+    <div class="schedule-contact">Call/Text: 702 381 4197</div>
+    <div class="schedule-options">
+      <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener" class="schedule-option">
+        <div>
+          <div class="schedule-option-label">First Visit</div>
+          <h3>New Client</h3>
+          <p>Start with your free consultation so we can learn about your needs and confirm the best next step.</p>
+        </div>
+        <strong>Open Calendly</strong>
+      </a>
+      <a href="https://striveptlv.janeapp.com" target="_blank" rel="noopener" class="schedule-option">
+        <div>
+          <div class="schedule-option-label">Ongoing Care</div>
+          <h3>Returning Client</h3>
+          <p>Use JaneApp if you are already established with STRIVE and need to book a follow-up visit.</p>
+        </div>
+        <strong>Open JaneApp</strong>
+      </a>
+    </div>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -572,7 +732,7 @@
       <p class="hero-desc anim d2">STRIVE is built around two physical therapists with deep passion for neurological rehabilitation. We bring clinical precision, genuine investment in each client, and a belief that recovery doesn't end at discharge.</p>
       <div class="hero-actions anim d2">
         <a href="#providers" class="btn-primary">Meet Our PTs</a>
-        <a href="index.html#contact" class="btn-outline">Book a Session</a>
+        <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener" class="btn-outline">Book a Session</a>
       </div>
       <div class="hero-trust anim d3">
         <span class="trust-item"><span class="trust-dot"></span>Doctors of Physical Therapy</span>
@@ -834,7 +994,7 @@
     <h2>READY TO WORK<br>WITH OUR TEAM?</h2>
     <p>Start with a consultation. We'll learn where you are, where you want to go, and build a plan to get you there.</p>
     <div class="cta-actions">
-      <a href="index.html#contact" class="cta-dark">Request a Consultation</a>
+      <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener" class="cta-dark">Request a Consultation</a>
       <a href="neuro-wellness.html" class="cta-ghost">View Neuro Wellness</a>
     </div>
   </div>
@@ -869,7 +1029,7 @@
       </div>
       <div class="footer-col">
         <h4>Las Vegas</h4>
-        <a href="index.html#contact">Book a Session</a>
+        <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener">Book a Session</a>
         <a href="index.html#pricing">Pricing</a>
         <a href="index.html#faq">FAQ</a>
         <a href="insights/">Insights</a>
@@ -883,6 +1043,37 @@
 </footer>
 
 <script>
+  const scheduleModal = document.getElementById('scheduleModal');
+  const scheduleTriggers = document.querySelectorAll('[data-schedule-trigger]');
+
+  function setScheduleModalState(isOpen) {
+    if (!scheduleModal) return;
+    scheduleModal.classList.toggle('open', isOpen);
+    scheduleModal.setAttribute('aria-hidden', String(!isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  function openScheduleModal(event) {
+    if (event) event.preventDefault();
+    setScheduleModalState(true);
+  }
+
+  function closeScheduleModal() {
+    setScheduleModalState(false);
+  }
+
+  scheduleTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', openScheduleModal);
+  });
+
+  if (scheduleModal) {
+    scheduleModal.addEventListener('click', (event) => {
+      if (event.target === scheduleModal || event.target.hasAttribute('data-schedule-close')) {
+        closeScheduleModal();
+      }
+    });
+  }
+
   function toggleMenu(forceState) {
     const menu = document.getElementById('mobileMenu');
     const shouldOpen = typeof forceState === 'boolean'
@@ -912,6 +1103,13 @@
   });
   document.querySelectorAll('.hero .anim').forEach(el => {
     setTimeout(() => el.classList.add('visible'), 100);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      toggleMenu(false);
+      closeScheduleModal();
+    }
   });
 </script>
 
