@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fdfbf8" />
+  <title>FND Rehabilitation Las Vegas | STRIVE Physical Therapy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f7f4ef;
+      --warm-white: #fdfbf8;
+      --ink: #1c1a18;
+      --ink-soft: #3d3a35;
+      --muted: #7a756d;
+      --rule: #ddd8d0;
+      --accent: #b05c3a;
+      --accent-light: #e8d4c8;
+      --sage: #6b7d6a;
+      --sage-light: #d8e3d7;
+      --section-pad: clamp(60px, 8vw, 110px);
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--warm-white);
+      color: var(--ink);
+      line-height: 1.7;
+      font-weight: 400;
+      overflow-x: hidden;
+      padding-top: 68px;
+    }
+
+    em { font-style: normal; color: var(--accent); }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: rgba(253, 251, 248, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 68px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border: 1px solid rgba(28, 26, 24, 0.12);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(176, 92, 58, 0.16), rgba(176, 92, 58, 0.04) 58%, transparent 60%),
+        linear-gradient(135deg, rgba(107, 125, 106, 0.12), rgba(176, 92, 58, 0.08));
+    }
+    .logo-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--ink);
+      letter-spacing: 2.8px;
+      line-height: 1;
+    }
+    .logo-sub {
+      font-size: 9px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-book {
+      background: var(--accent) !important;
+      color: var(--warm-white) !important;
+      padding: 9px 20px;
+      border-radius: 2px;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+    }
+    .nav-book:hover { background: #934725 !important; }
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 5px; padding: 24px 0; }
+    .nav-dropdown > a::after {
+      content: "";
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid rgba(28, 26, 24, 0.45);
+      transition: transform 0.2s, border-top-color 0.2s;
+    }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); border-top-color: var(--accent); }
+    .dropdown-menu {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 200px;
+      overflow: hidden;
+      background: var(--warm-white);
+      border: 1px solid rgba(28, 26, 24, 0.08);
+      box-shadow: 0 18px 36px rgba(28, 26, 24, 0.08);
+      transition: opacity 0.15s;
+    }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a {
+      display: block;
+      padding: 11px 18px;
+      border-bottom: 1px solid rgba(28, 26, 24, 0.07);
+      white-space: nowrap;
+      color: var(--ink-soft);
+      font-size: 13.5px;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0.2px;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: rgba(176, 92, 58, 0.08); color: var(--accent); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 24px; height: 2px; background: var(--ink); }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--warm-white);
+      z-index: 199;
+      padding: 32px 6vw;
+      overflow-y: auto;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 19px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mob-book {
+      background: var(--accent) !important;
+      color: var(--warm-white) !important;
+      text-align: center;
+      border-radius: 2px;
+      padding: 15px !important;
+      margin-top: 24px;
+      border: none !important;
+      font-weight: 700 !important;
+    }
+    .mob-dropdown { border-bottom: 1px solid var(--rule); }
+    .mob-dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--ink-soft);
+      font-size: 19px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+    .mob-arrow {
+      font-size: 22px;
+      color: var(--accent);
+      display: inline-block;
+      transition: transform 0.25s;
+    }
+    .mob-arrow.open { transform: rotate(90deg); }
+    .mob-dropdown-items { display: none; flex-direction: column; padding-left: 16px; }
+    .mob-dropdown-items.open { display: flex; }
+    .mob-dropdown-items a {
+      font-size: 15px !important;
+      padding: 12px 0 !important;
+      border-bottom: 1px solid var(--rule) !important;
+      color: rgba(61, 58, 53, 0.85) !important;
+      text-transform: none;
+      letter-spacing: 0.2px;
+      font-family: 'Barlow', sans-serif;
+    }
+    .mob-dropdown-items a:last-child { border-bottom: none !important; }
+
+    .schedule-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 240;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(28, 26, 24, 0.4);
+      backdrop-filter: blur(8px);
+    }
+    .schedule-modal.open { display: flex; }
+    .schedule-dialog {
+      position: relative;
+      width: min(100%, 520px);
+      background: var(--warm-white);
+      border: 1px solid var(--rule);
+      box-shadow: 0 28px 64px rgba(28, 26, 24, 0.18);
+      padding: 30px 28px 26px;
+    }
+    .schedule-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--rule);
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .schedule-close:hover { background: rgba(176, 92, 58, 0.08); }
+    .schedule-kicker {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .schedule-dialog h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 5vw, 44px);
+      line-height: 0.96;
+      color: var(--ink);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .schedule-dialog p {
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 22px;
+      max-width: 420px;
+    }
+    .schedule-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .schedule-option {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      min-height: 190px;
+      padding: 22px 20px;
+      border: 1px solid var(--rule);
+      text-decoration: none;
+      background: var(--cream);
+      transition: border-color 0.2s, transform 0.15s, background 0.2s;
+    }
+    .schedule-option > div {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .schedule-option:hover {
+      border-color: rgba(176, 92, 58, 0.45);
+      background: var(--warm-white);
+      transform: translateY(-2px);
+    }
+    .schedule-option-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .schedule-option h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      line-height: 0.98;
+      color: var(--ink);
+      margin: 10px 0 8px;
+      text-transform: uppercase;
+    }
+    .schedule-option p {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    .schedule-option strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 13px;
+    }
+
+    .hero {
+      padding: var(--section-pad) clamp(24px, 5vw, 80px);
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      min-height: calc(78vh - 68px);
+    }
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      font-weight: 600;
+      line-height: 0.98;
+      margin-bottom: 28px;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .hero-body {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .pill {
+      background: var(--sage-light);
+      color: var(--sage);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.86rem;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary,
+    .btn-ghost,
+    .btn-white {
+      font-family: 'Barlow Condensed', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--warm-white);
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 2px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-ghost {
+      border: 1px solid var(--rule);
+      color: var(--ink-soft);
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 2px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    section { padding: var(--section-pad) clamp(24px, 5vw, 80px); }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+    .section-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--muted); }
+    h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .lead {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 660px;
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+
+    .hero-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 44px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent), var(--sage));
+    }
+    .hero-card h3,
+    .compare-col h4,
+    .sched-card h4,
+    .understanding-right h4,
+    .cta-banner h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .hero-card h3 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--ink);
+    }
+    .card-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .card-item p { font-size: 0.96rem; color: var(--ink-soft); line-height: 1.7; }
+    .card-item strong { color: var(--ink); font-weight: 600; }
+
+    .understanding { background: var(--cream); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .understanding-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .understanding-left p { font-size: 1rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 20px; }
+    .callout-block {
+      border-left: 3px solid var(--accent);
+      padding: 20px 24px;
+      background: rgba(176, 92, 58, 0.06);
+      border-radius: 0 4px 4px 0;
+      margin: 28px 0;
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    .fact-list { list-style: none; margin-top: 8px; }
+    .fact-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+    .fact-list li:last-child { border-bottom: none; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 8px; }
+
+    .honest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .honest-card {
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 36px 30px;
+      position: relative;
+      background: var(--warm-white);
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .honest-card:hover { border-color: var(--accent); box-shadow: 0 4px 24px rgba(176, 92, 58, 0.08); }
+    .honest-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 400;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+    .honest-card h4,
+    .address-item h4,
+    .step h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .honest-card p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.75; }
+
+    .address-bg { background: var(--ink); color: var(--warm-white); }
+    .address-bg .section-label { color: rgba(255, 255, 255, 0.45); }
+    .address-bg .section-label::before { background: rgba(255, 255, 255, 0.45); }
+    .address-bg h2 { color: var(--warm-white); }
+    .address-bg .lead { color: rgba(255, 255, 255, 0.68); }
+    .address-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .address-item {
+      background: var(--ink);
+      padding: 32px 28px;
+      transition: background 0.2s;
+    }
+    .address-item:hover { background: rgba(255, 255, 255, 0.04); }
+    .address-item h4 { color: var(--warm-white); margin-bottom: 10px; }
+    .address-item p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.62); line-height: 1.7; }
+    .address-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 48px;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: var(--rule);
+      z-index: 0;
+    }
+    .step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: var(--warm-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .step p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .compare-col { border-radius: 4px; padding: 36px 32px; }
+    .compare-col.good { background: var(--sage-light); border: 1px solid #c5d4c4; }
+    .compare-col.neutral { background: var(--cream); border: 1px solid var(--rule); }
+    .compare-col h4 { font-size: 1.65rem; font-weight: 600; margin-bottom: 24px; }
+    .compare-col.good h4 { color: var(--sage); }
+    .compare-col.neutral h4 { color: var(--muted); }
+    .compare-list { list-style: none; }
+    .compare-list li {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .compare-list li:last-child { border-bottom: none; }
+    .check { color: var(--sage); font-weight: 700; flex-shrink: 0; }
+    .ex { color: var(--muted); flex-shrink: 0; }
+
+    .scheduling-bg { background: var(--cream); border-top: 1px solid var(--rule); }
+    .sched-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .sched-card {
+      background: var(--warm-white);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .sched-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); }
+    .sched-card h4 { font-size: 1.8rem; font-weight: 600; margin-bottom: 8px; }
+    .sched-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+    .sched-features { list-style: none; margin-bottom: 32px; }
+    .sched-features li { padding: 8px 0; font-size: 0.95rem; color: var(--ink-soft); display: flex; gap: 10px; }
+    .sched-features .dot { margin-top: 8px; }
+
+    .cta-banner {
+      background: linear-gradient(135deg, var(--accent) 0%, #8b3e20 100%);
+      padding: 64px clamp(24px, 5vw, 80px);
+      text-align: center;
+    }
+    .cta-banner h2 { color: #fff; margin-bottom: 16px; font-size: clamp(2.4rem, 4vw, 3.4rem); }
+    .cta-banner h2 em { color: rgba(255, 255, 255, 0.9); }
+    .cta-banner p { color: rgba(255, 255, 255, 0.92); font-size: 1rem; margin-bottom: 32px; line-height: 1.8; }
+    .btn-white {
+      background: #fff;
+      color: var(--accent);
+      padding: 15px 32px;
+      text-decoration: none;
+      border-radius: 2px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.62);
+      padding: 56px clamp(24px, 5vw, 80px) 36px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 48px; }
+    .footer-brand .nav-logo { margin-bottom: 16px; }
+    .footer-brand .logo-text { color: #fff; }
+    .footer-brand .logo-sub { color: rgba(255, 255, 255, 0.55); }
+    footer p { font-size: 0.9rem; line-height: 1.8; max-width: 340px; }
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255, 255, 255, 0.56);
+      text-decoration: none;
+      font-size: 0.92rem;
+      margin-bottom: 11px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--accent-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 28px;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-left > * { animation: fadeUp 0.7s ease both; }
+    .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero-left > *:nth-child(4) { animation-delay: 0.35s; }
+    .hero-left > *:nth-child(5) { animation-delay: 0.4s; }
+    .hero-card { animation: fadeUp 0.8s ease 0.5s both; }
+
+    @media (max-width: 1024px) {
+      .footer-top { grid-template-columns: 1.5fr 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-card { display: none; }
+      .understanding-grid, .compare-grid, .sched-grid { grid-template-columns: 1fr; }
+      .honest-grid, .address-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; gap: 32px 0; }
+      .steps::before { display: none; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      .schedule-modal { padding: 14px; }
+      .schedule-dialog { padding: 26px 20px 20px; }
+      .schedule-options { grid-template-columns: 1fr; }
+      .schedule-option { min-height: 0; }
+      .hero { padding: 72px 6vw 76px; }
+      section, .cta-banner, footer { padding-left: 5vw; padding-right: 5vw; }
+      .btn-row a { width: 100%; text-align: center; }
+      .honest-grid, .address-grid, .steps { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="logo-mark" aria-hidden="true"></span>
+    <div>
+      <div class="logo-text">STRIVE</div>
+      <div class="logo-sub">Physical Therapy · Las Vegas</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <a href="index.html#services">Services</a>
+      <div class="dropdown-menu">
+        <a href="wellness.html">Neuro Wellness</a>
+        <a href="stroke-rehab.html">Stroke Rehab</a>
+        <a href="vestibular-rehab.html">Vestibular Rehab</a>
+      </div>
+    </div>
+    <a href="about.html">Our Team</a>
+    <a href="#scheduling" data-schedule-trigger>Scheduling</a>
+    <div class="nav-dropdown">
+      <a href="#">Patient Resource</a>
+      <div class="dropdown-menu">
+        <a href="insights/">Blog</a>
+        <a href="https://open.spotify.com/show/2nbFBV45QpM37SAdHtobgF?si=Gns3Ft-7SgCNdGbmnOcpag" target="_blank" rel="noopener">Podcast</a>
+        <a href="https://striveptlv.com/moneymanagement/">Online Bill Pay</a>
+        <a href="https://striveptlv.com/patient-resource/">Home Modifications</a>
+      </div>
+    </div>
+    <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener" class="nav-book">Book Now</a>
+  </div>
+  <div class="nav-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu(false)">Home</a>
+  <a href="wellness.html" onclick="toggleMenu(false)">Neuro Wellness</a>
+  <a href="stroke-rehab.html" onclick="toggleMenu(false)">Stroke Rehab</a>
+  <a href="vestibular-rehab.html" onclick="toggleMenu(false)">Vestibular Rehab</a>
+  <a href="about.html" onclick="toggleMenu(false)">Our Team</a>
+  <a href="#scheduling" data-schedule-trigger onclick="toggleMenu(false)">Scheduling</a>
+  <div class="mob-dropdown">
+    <div class="mob-dropdown-toggle" onclick="toggleMobileDropdown('patientResourceItems', this.querySelector('.mob-arrow'))">
+      Patient Resource <span class="mob-arrow">›</span>
+    </div>
+    <div class="mob-dropdown-items" id="patientResourceItems">
+      <a href="insights/" onclick="toggleMenu(false)">Blog</a>
+      <a href="https://open.spotify.com/show/2nbFBV45QpM37SAdHtobgF?si=Gns3Ft-7SgCNdGbmnOcpag" target="_blank" rel="noopener">Podcast</a>
+      <a href="https://striveptlv.com/moneymanagement/" onclick="toggleMenu(false)">Online Bill Pay</a>
+      <a href="https://striveptlv.com/patient-resource/" onclick="toggleMenu(false)">Home Modifications</a>
+    </div>
+  </div>
+  <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener" class="mob-book" onclick="toggleMenu(false)">Book an Appointment</a>
+</div>
+
+<div class="schedule-modal" id="scheduleModal" aria-hidden="true">
+  <div class="schedule-dialog" role="dialog" aria-modal="true" aria-labelledby="scheduleTitle">
+    <button type="button" class="schedule-close" aria-label="Close scheduling options" data-schedule-close>&times;</button>
+    <div class="schedule-kicker">Scheduling</div>
+    <h2 id="scheduleTitle">Are you a new client or a returning client?</h2>
+    <p>Choose the option that matches where you are in the process, and we’ll send you to the right scheduling page.</p>
+    <div class="schedule-options">
+      <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener" class="schedule-option">
+        <div>
+          <div class="schedule-option-label">First Visit</div>
+          <h3>New Client</h3>
+          <p>Start with your free consultation so we can learn about your needs and confirm the best next step.</p>
+        </div>
+        <strong>Open Calendly</strong>
+      </a>
+      <a href="https://striveptlv.janeapp.com" target="_blank" rel="noopener" class="schedule-option">
+        <div>
+          <div class="schedule-option-label">Ongoing Care</div>
+          <h3>Returning Client</h3>
+          <p>Use JaneApp if you are already established with STRIVE and need to book a follow-up visit.</p>
+        </div>
+        <strong>Open JaneApp</strong>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">FND Rehabilitation · Las Vegas, NV</div>
+      <h1>Living with <em>FND</em> Deserves Thoughtful Care</h1>
+      <p class="hero-body">
+        Functional Neurological Disorder is complex, misunderstood, and profoundly personal. We won't pretend to have all the answers, but we will show up prepared, curious, and fully committed to helping you move better and live with greater independence.
+      </p>
+      <div class="hero-pills">
+        <span class="pill">Individualized Programs</span>
+        <span class="pill">1-on-1 At-Home Care</span>
+        <span class="pill">Honest Communication</span>
+        <span class="pill">Patient-Led Pacing</span>
+      </div>
+      <div class="btn-row">
+        <a href="#scheduling" class="btn-primary">Request a Consultation</a>
+        <a href="#approach" class="btn-ghost">Our Approach</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>What You Can Expect From Us</h3>
+      <div class="card-item">
+        <div class="card-icon">1</div>
+        <p><strong>A program built around you.</strong> No two FND presentations are alike. We start from scratch with your specific symptoms, goals, and daily life.</p>
+      </div>
+      <div class="card-item">
+        <div class="card-icon">2</div>
+        <p><strong>Honesty over false confidence.</strong> We are not FND specialists. We will be transparent, keep learning, and tell you when something isn't working.</p>
+      </div>
+      <div class="card-item">
+        <div class="card-icon">3</div>
+        <p><strong>A focus on what matters most.</strong> Your independence. Your mobility. Your ability to do the things that matter in your everyday life.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="understanding" id="understanding">
+    <div class="section-inner">
+      <div class="section-label">What Is FND</div>
+      <h2>We Understand <em>FND</em> Is Not Simple</h2>
+      <div class="understanding-grid">
+        <div class="understanding-left">
+          <p>
+            Functional Neurological Disorder involves real, disabling symptoms like weakness, tremor, gait disturbances, fatigue, sensory changes, and more that arise from how the nervous system is functioning, not from structural damage. The symptoms are genuine, not imagined, and often highly variable day to day.
+          </p>
+          <p>
+            FND has historically been misunderstood in medicine. Many patients have been dismissed, misdiagnosed, or told nothing can be done. We reject that framing. Where there is function, there is the potential for change.
+          </p>
+          <p>
+            We bring an informed, respectful approach to every session. We have studied the neuroscience, read the research, and we continue to do so. We will never pretend this is easy or that we have a guaranteed protocol, but we will never stop trying to find what works for you.
+          </p>
+        </div>
+        <div class="understanding-right">
+          <h4 style="font-size:1.5rem;font-weight:600;margin-bottom:20px;color:var(--ink);">Common FND symptoms we work with:</h4>
+          <ul class="fact-list">
+            <li><span class="dot"></span>Functional weakness or paralysis affecting limbs or gait</li>
+            <li><span class="dot"></span>Tremor, jerks, or involuntary movements</li>
+            <li><span class="dot"></span>Difficulty walking or frequent falls</li>
+            <li><span class="dot"></span>Balance problems and dizziness</li>
+            <li><span class="dot"></span>Fatigue and activity intolerance</li>
+            <li><span class="dot"></span>Sensory disturbances and coordination challenges</li>
+            <li><span class="dot"></span>Symptom fluctuation and unpredictable flares</li>
+          </ul>
+          <p style="font-size:0.88rem;color:var(--muted);margin-top:18px;font-style:italic;">This list is not exhaustive. Every patient presents differently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="section-inner">
+      <div class="section-label">Our Commitment</div>
+      <h2>We Will Listen to <em>Every Patient</em></h2>
+      <p class="lead">FND requires a different kind of honesty from a physical therapist. Here is how we show up for you.</p>
+      <div class="honest-grid">
+        <div class="honest-card">
+          <div class="honest-num">01</div>
+          <h4>We Individualize Everything</h4>
+          <p>
+            There is no one-size-fits-all protocol for FND. Your evaluation, your plan, your progressions, and your pacing are built around your body, your symptoms, and your goals, not a template. We observe what helps, adjust what doesn't, and iterate constantly.
+          </p>
+        </div>
+        <div class="honest-card">
+          <div class="honest-num">02</div>
+          <h4>We Do Not Claim to Be Experts</h4>
+          <p>
+            FND is a rapidly evolving field. We have dedicated time to studying it, but we will not pretend to have answers we don't have. We will communicate with your neurologist and care team, and we will always tell you when we need to reconsider an approach.
+          </p>
+        </div>
+        <div class="honest-card">
+          <div class="honest-num">03</div>
+          <h4>We Focus on Your Independence</h4>
+          <p>
+            Symptom elimination may not always be the right goal. Instead, we focus on what genuinely improves your daily life: safer mobility, greater confidence in movement, reduced fall risk, and the ability to do more of what matters to you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="address-bg">
+    <div class="section-inner">
+      <div class="section-label">What We Work On</div>
+      <h2>Movement Goals We <em>Pursue Together</em></h2>
+      <p class="lead">Our sessions are built around functional, meaningful goals. Progress may be gradual, but every improvement in daily independence counts.</p>
+      <div class="address-grid">
+        <div class="address-item">
+          <div class="address-tag">Mobility</div>
+          <h4>Walking &amp; Gait Training</h4>
+          <p>Strategies to improve walking quality, reduce compensatory patterns, and build confidence on different surfaces and in different environments.</p>
+        </div>
+        <div class="address-item">
+          <div class="address-tag">Safety</div>
+          <h4>Fall Prevention &amp; Balance</h4>
+          <p>Balance challenges are common in FND. We work on steadier movement, better reactions, and reducing fall risk at home and in the community.</p>
+        </div>
+        <div class="address-item">
+          <div class="address-tag">Strength</div>
+          <h4>Functional Strength &amp; Endurance</h4>
+          <p>Building capacity for daily activities through graded, tolerable movement while respecting your symptom fluctuations along the way.</p>
+        </div>
+        <div class="address-item">
+          <div class="address-tag">Transfers</div>
+          <h4>Sit-to-Stand &amp; Bed Mobility</h4>
+          <p>Improving the transitions that affect independence most: getting up safely, moving in bed, and navigating stairs with confidence.</p>
+        </div>
+        <div class="address-item">
+          <div class="address-tag">Pacing</div>
+          <h4>Activity Tolerance &amp; Pacing</h4>
+          <p>Many FND patients experience boom-bust cycles. We help you find a sustainable rhythm that builds capacity without triggering setbacks.</p>
+        </div>
+        <div class="address-item">
+          <div class="address-tag">Daily Life</div>
+          <h4>Home &amp; Community Participation</h4>
+          <p>Your goals may be cooking, getting to the mailbox, or attending a family event. We orient the plan around the life you want to live.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-label">The Process</div>
+      <h2>How We Build <em>Your Program</em></h2>
+      <p class="lead">We don't have a fixed protocol. We have a framework for listening, observing, and responding to what you show us.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Start with a Conversation</h4>
+          <p>Tell us about your symptoms, your history, what's been tried before, and what matters most to you. We listen before we plan.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>At-Home Evaluation</h4>
+          <p>We assess your movement, balance, and function in your real home environment, where daily challenges actually happen.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>A Personalized Starting Point</h4>
+          <p>We build a program based on what we find, not on a template. The focus is on what is safe, tolerable, and meaningful for you today.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Adjust, Progress, Repeat</h4>
+          <p>FND symptoms change. We change with them. Each visit we reassess, recalibrate, and keep moving toward your goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--cream);border-top:1px solid var(--rule);">
+    <div class="section-inner">
+      <div class="section-label">Why This Matters</div>
+      <h2>The STRIVE Difference for <em>FND Patients</em></h2>
+      <p class="lead">Many patients with FND have had discouraging experiences with healthcare. We are trying to do something different.</p>
+      <div class="compare-grid">
+        <div class="compare-col good">
+          <h4>The STRIVE Approach</h4>
+          <ul class="compare-list">
+            <li><span class="check">✓</span>Program built individually for your presentation</li>
+            <li><span class="check">✓</span>Transparent about what we know and don't know</li>
+            <li><span class="check">✓</span>Goals tied to your daily function and independence</li>
+            <li><span class="check">✓</span>1-on-1 attention at every visit, no shared gym time</li>
+            <li><span class="check">✓</span>At-home evaluation in your real environment</li>
+            <li><span class="check">✓</span>Pacing respected, no "push through it" mentality</li>
+            <li><span class="check">✓</span>Ongoing collaboration with your medical team</li>
+          </ul>
+        </div>
+        <div class="compare-col neutral">
+          <h4>Common Experiences Elsewhere</h4>
+          <ul class="compare-list">
+            <li><span class="ex">–</span>Generic exercise protocol applied to everyone</li>
+            <li><span class="ex">–</span>Overconfident claims about curing or fixing FND</li>
+            <li><span class="ex">–</span>Focus on symptoms rather than meaningful function</li>
+            <li><span class="ex">–</span>Busy clinic settings with divided therapist attention</li>
+            <li><span class="ex">–</span>Assessment only in clinic, not in the home environment</li>
+            <li><span class="ex">–</span>Pressure to perform that escalates symptoms</li>
+            <li><span class="ex">–</span>Siloed care without communication across providers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scheduling-bg" id="scheduling">
+    <div class="section-inner">
+      <div class="section-label">Getting Started</div>
+      <h2>Book Your FND <em>Physical Therapy</em> Evaluation</h2>
+      <p class="lead">We require a free phone consultation before your first visit. It gives us both a chance to see if we are the right fit, and it gives you a chance to ask every question you have.</p>
+      <div class="sched-grid">
+        <div class="sched-card">
+          <h4>Initial Evaluation</h4>
+          <p class="sched-sub">New to STRIVE PT</p>
+          <ul class="sched-features">
+            <li><span class="dot"></span>Free phone consultation required first</li>
+            <li><span class="dot"></span>60-minute 1-on-1 at-home evaluation</li>
+            <li><span class="dot"></span>Movement, balance, and functional assessment</li>
+            <li><span class="dot"></span>Individualized treatment plan developed</li>
+            <li><span class="dot"></span>Available throughout the Las Vegas valley</li>
+          </ul>
+          <a href="https://calendly.com/dpt-striveptlv/30min" class="btn-primary" target="_blank" rel="noopener">Book Free Consultation</a>
+        </div>
+        <div class="sched-card">
+          <h4>Follow-Up Sessions</h4>
+          <p class="sched-sub">Returning Patients</p>
+          <ul class="sched-features">
+            <li><span class="dot"></span>45-60 minute treatment session</li>
+            <li><span class="dot"></span>Same provider, consistent relationship</li>
+            <li><span class="dot"></span>Program reassessment and progression</li>
+            <li><span class="dot"></span>Symptom review and plan adjustments</li>
+            <li><span class="dot"></span>At-home care throughout Las Vegas</li>
+          </ul>
+          <a href="https://striveptlv.janeapp.com" class="btn-ghost" target="_blank" rel="noopener">Book Follow-Up</a>
+        </div>
+      </div>
+      <p style="margin-top:28px;font-size:0.95rem;color:var(--muted);">
+        Not sure if we're the right fit? Start with a free consultation and we can talk through whether this is the right next step for you.
+      </p>
+    </div>
+  </section>
+
+  <div class="cta-banner">
+    <div style="max-width:700px;margin:0 auto;">
+      <h2>Ready to Start <em>Moving Forward?</em></h2>
+      <p>We can't promise a cure. We can promise individualized care, honest communication, and a genuine commitment to improving your mobility and independence, one session at a time.</p>
+      <a href="https://calendly.com/dpt-striveptlv/30min" class="btn-white" target="_blank" rel="noopener">Request a Free Consultation</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <div>
+            <div class="logo-text">STRIVE</div>
+            <div class="logo-sub">Physical Therapy · Las Vegas</div>
+          </div>
+        </a>
+        <p>Neurological rehabilitation and wellness services in Las Vegas, delivered 1-on-1 with thoughtful, individualized care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="fnd.html">FND Rehab</a>
+        <a href="stroke-rehab.html">Stroke Rehab</a>
+        <a href="vestibular-rehab.html">Vestibular Rehab</a>
+        <a href="wellness.html">Neuro Wellness</a>
+      </div>
+      <div class="footer-col">
+        <h4>Practice</h4>
+        <a href="about.html">Our Team</a>
+        <a href="index.html#services">All Services</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="insights/">Insights</a>
+        <a href="https://striveptlv.com/moneymanagement/">Online Bill Pay</a>
+        <a href="https://striveptlv.com/patient-resource/">Home Modifications</a>
+        <a href="https://calendly.com/dpt-striveptlv/30min" target="_blank" rel="noopener">Book a Session</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 STRIVE Physical Therapy &middot; Las Vegas, NV &middot; All rights reserved.</span>
+      <span>Licensed Physical Therapists &middot; State of Nevada</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const scheduleModal = document.getElementById('scheduleModal');
+  const scheduleTriggers = document.querySelectorAll('[data-schedule-trigger]');
+
+  function setScheduleModalState(isOpen) {
+    if (!scheduleModal) return;
+    scheduleModal.classList.toggle('open', isOpen);
+    scheduleModal.setAttribute('aria-hidden', String(!isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  function openScheduleModal(event) {
+    if (event) event.preventDefault();
+    setScheduleModalState(true);
+  }
+
+  function closeScheduleModal() {
+    setScheduleModalState(false);
+  }
+
+  scheduleTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', openScheduleModal);
+  });
+
+  if (scheduleModal) {
+    scheduleModal.addEventListener('click', (event) => {
+      if (event.target === scheduleModal || event.target.hasAttribute('data-schedule-close')) {
+        closeScheduleModal();
+      }
+    });
+  }
+
+  function toggleMenu(forceState) {
+    const menu = document.getElementById('mobileMenu');
+    const shouldOpen = typeof forceState === 'boolean'
+      ? forceState
+      : !menu.classList.contains('open');
+
+    menu.classList.toggle('open', shouldOpen);
+  }
+
+  function toggleMobileDropdown(menuId, arrowEl) {
+    const dropdown = document.getElementById(menuId);
+
+    if (!dropdown || !arrowEl) {
+      return;
+    }
+
+    dropdown.classList.toggle('open');
+    arrowEl.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
