@@ -550,47 +550,18 @@
     .hero {
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 78% 24%, rgba(151,185,182,0.2) 0%, transparent 28%),
-        radial-gradient(circle at 18% 82%, rgba(201,166,109,0.1) 0%, transparent 22%),
-        linear-gradient(180deg, #f8faf8 0%, #edf2ee 100%);
+      background: linear-gradient(180deg, #f8faf8 0%, #f1f5f2 100%);
       padding: 110px 5vw 88px;
     }
-    .hero-accent-bar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--accent-deep);
-    }
-    .hero-slash {
-      position: absolute;
-      right: -60px;
-      top: -40px;
-      width: 600px;
-      height: 130%;
-      background: linear-gradient(135deg, rgba(94,141,139,0.08) 0%, transparent 55%);
-      transform: skewX(-12deg);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(23,34,37,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(23,34,37,0.035) 1px, transparent 1px);
-      background-size: 72px 72px;
-      opacity: 0.3;
-      pointer-events: none;
-    }
+    .hero-accent-bar,
+    .hero-slash,
+    .hero::after { display: none; }
     .hero-inner {
       position: relative;
       z-index: 2;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 78px;
+      gap: 52px;
       align-items: center;
       max-width: 1100px;
       margin: 0 auto;
@@ -599,23 +570,20 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 7px 16px;
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(23,34,37,0.08);
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--accent-deep);
-      margin-bottom: 24px;
+      color: var(--text-soft);
+      margin-bottom: 12px;
     }
     .hero-eyebrow::before {
       content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--accent-deep);
-      border-radius: 0;
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
       flex-shrink: 0;
     }
     .hero h1 {
@@ -672,10 +640,9 @@
       flex-shrink: 0;
     }
     .hero-right {
-      background: rgba(255,255,255,0.76);
+      background: rgba(255,255,255,0.92);
       border: 1px solid rgba(23,34,37,0.09);
-      border-top: 3px solid var(--accent-deep);
-      box-shadow: 0 20px 50px rgba(23,34,37,0.08);
+      box-shadow: 0 16px 36px rgba(23,34,37,0.06);
     }
     .hero-right-head {
       padding: 18px 24px;
@@ -686,26 +653,19 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--accent-deep);
-      background: rgba(151,185,182,0.1);
+      background: rgba(151,185,182,0.08);
     }
     .hero-distinctions { display: flex; flex-direction: column; }
     .hero-dist-item {
       display: flex;
-      gap: 16px;
+      gap: 0;
       padding: 18px 24px;
       border-bottom: 1px solid var(--line);
       align-items: flex-start;
     }
     .hero-dist-item:last-child { border-bottom: none; }
     .dist-icon {
-      width: 36px;
-      height: 36px;
-      border: 1px solid rgba(151,185,182,0.28);
-      background: rgba(151,185,182,0.14);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      display: none;
     }
     .dist-text strong {
       display: block;
@@ -768,25 +728,29 @@
     .faq-section { background: var(--paper); }
     .fall-section { background: linear-gradient(180deg, #fbfaf6 0%, #f4f0e8 100%); }
     .unique-section,
-    .hiit-section,
+    .hiit-section {
+      background: white;
+      color: var(--text);
+    }
     .cta-section {
-      background: linear-gradient(180deg, #1b2628 0%, #151d1f 100%);
+      background: linear-gradient(180deg, #1a2426 0%, #151d1f 100%);
       color: white;
     }
     .unique-section .section-label,
-    .hiit-section .section-label,
-    .cta-eyebrow { color: rgba(255,255,255,0.72); }
+    .hiit-section .section-label { color: var(--accent-deep); }
     .unique-section .section-label::before,
-    .hiit-section .section-label::before,
+    .hiit-section .section-label::before { background: var(--accent-deep); }
+    .cta-eyebrow { color: rgba(255,255,255,0.72); }
     .cta-eyebrow::before { background: var(--accent); }
     .unique-section h2,
-    .hiit-section h2,
+    .hiit-section h2 { color: var(--ink); }
     .cta-section h2 { color: white; }
     .unique-section h2 em,
     .hiit-section h2 em,
+    .cta-section h2 em { color: var(--accent-deep); }
     .cta-section h2 em { color: var(--accent); }
     .unique-section .section-lead,
-    .hiit-left p,
+    .hiit-left p { color: var(--text-mid); }
     .cta-section > p { color: rgba(255,255,255,0.66); }
 
     .problem-grid,
@@ -828,7 +792,7 @@
     }
     .hiit-quote {
       background: rgba(151,185,182,0.12);
-      border-left-color: var(--accent);
+      border-left-color: var(--accent-deep);
     }
     .callout-box p,
     .fall-callout p,
@@ -837,12 +801,12 @@
       line-height: 1.7;
       margin: 0;
     }
-    .hiit-quote p { color: rgba(255,255,255,0.8); }
+    .hiit-quote p { color: var(--text-mid); }
     .hiit-quote cite {
       display: block;
       margin-top: 10px;
       font-size: 11px;
-      color: rgba(255,255,255,0.42);
+      color: var(--text-soft);
       font-style: normal;
       letter-spacing: 0.5px;
     }
@@ -966,13 +930,13 @@
 
     .unique-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
       margin-top: 44px;
     }
     .unique-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--panel);
+      border: 1px solid var(--line);
       padding: 30px 28px;
       min-height: 240px;
       position: relative;
@@ -986,48 +950,40 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: var(--accent);
+      background: var(--accent-deep);
       transform: scaleX(0.35);
       transform-origin: left;
       transition: transform 0.2s;
     }
     .unique-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-      border-color: rgba(151,185,182,0.22);
+      box-shadow: 0 18px 40px rgba(23,34,37,0.08);
+      border-color: rgba(61,127,143,0.22);
     }
     .unique-card:hover::before { transform: scaleX(1); }
     .unique-card-num {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 44px;
-      color: rgba(255,255,255,0.18);
+      color: rgba(61,127,143,0.18);
       line-height: 1;
       margin-bottom: 16px;
       display: block;
     }
     .unique-card-icon,
     .hiit-icon {
-      width: 46px;
-      height: 46px;
-      background: rgba(151,185,182,0.14);
-      border: 1px solid rgba(151,185,182,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      flex-shrink: 0;
+      display: none;
     }
-    .unique-card h3 { color: white; font-size: 28px; margin-bottom: 12px; }
+    .unique-card h3 { color: var(--ink); font-size: 28px; margin-bottom: 12px; }
     .unique-card p,
-    .hiit-point-text span { color: rgba(255,255,255,0.68); }
+    .hiit-point-text span { color: var(--text-mid); }
     .unique-card-tag,
     .evidence-tag {
       display: inline-block;
       margin-top: 16px;
       padding: 5px 10px;
-      border: 1px solid rgba(151,185,182,0.26);
-      background: rgba(151,185,182,0.1);
-      color: var(--accent);
+      border: 1px solid rgba(61,127,143,0.22);
+      background: rgba(126,184,197,0.08);
+      color: var(--accent-deep);
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 11px;
       font-weight: 700;
@@ -1121,17 +1077,18 @@
     }
     .hiit-point {
       display: flex;
-      gap: 16px;
+      gap: 0;
       align-items: flex-start;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--mist);
+      border: 1px solid var(--line);
       padding: 22px 24px;
+      border-left: 3px solid var(--accent-deep);
     }
     .hiit-point-text strong {
       display: block;
       font-size: 14px;
       font-weight: 700;
-      color: white;
+      color: var(--ink);
       margin-bottom: 4px;
     }
 
@@ -1714,11 +1671,12 @@
   <div class="section-inner">
     <div class="section-label">Our Philosophy</div>
     <h2>Steps Towards <em>Recovery</em></h2>
-    <p class="section-lead" style="color:rgba(255,255,255,0.66);">These aren't add-ons or bonuses — they are the core of how we approach stroke rehabilitation differently from every standard program in Las Vegas.</p>
+    <p class="section-lead">These are the core pieces of how we approach stroke rehabilitation differently from standard programs in Las Vegas.</p>
 
     <div class="unique-grid">
 
       <div class="unique-card anim">
+        <span class="unique-card-num">01</span>
         <div class="unique-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#97b9b6" stroke-width="1.8" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
         </div>
@@ -1728,6 +1686,7 @@
       </div>
 
       <div class="unique-card anim d1">
+        <span class="unique-card-num">02</span>
         <div class="unique-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#97b9b6" stroke-width="1.8" stroke-linecap="round"><path d="M6 4h12M6 20h12M6 4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M6 20a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2"/></svg>
         </div>
@@ -1737,6 +1696,7 @@
       </div>
 
       <div class="unique-card anim d2">
+        <span class="unique-card-num">03</span>
         <div class="unique-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#97b9b6" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="7" height="5" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="3" y="13" width="7" height="8" rx="1"/><rect x="14" y="13" width="7" height="8" rx="1"/></svg>
         </div>
@@ -1746,6 +1706,7 @@
       </div>
 
       <div class="unique-card anim">
+        <span class="unique-card-num">04</span>
         <div class="unique-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#97b9b6" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12 8 12 12 14.5 14.5"/></svg>
         </div>
@@ -1755,6 +1716,7 @@
       </div>
 
       <div class="unique-card anim d1">
+        <span class="unique-card-num">05</span>
         <div class="unique-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#97b9b6" stroke-width="1.8" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
@@ -1764,6 +1726,7 @@
       </div>
 
       <div class="unique-card anim d2">
+        <span class="unique-card-num">06</span>
         <div class="unique-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#97b9b6" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
