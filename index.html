@@ -1186,6 +1186,99 @@
       margin-top: 7px;
     }
 
+    .medicare-section {
+      background: var(--paper);
+    }
+    .medicare-wrap {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .medicare-copy-card {
+      background: var(--ink);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 30px 28px;
+      box-shadow: 0 10px 26px rgba(18,23,21,0.08);
+    }
+    .medicare-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .medicare-copy-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 34px;
+      line-height: 0.96;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: white;
+      margin-bottom: 14px;
+    }
+    .medicare-copy-card p {
+      color: rgba(255,255,255,0.72);
+      font-size: 14.5px;
+      line-height: 1.78;
+      margin-bottom: 18px;
+    }
+    .medicare-points {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .medicare-point {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: rgba(255,255,255,0.72);
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .medicare-point::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .medicare-form-card {
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 26px rgba(18,23,21,0.05);
+      padding: 28px 26px;
+    }
+    .medicare-form-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 30px;
+      line-height: 0.96;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .medicare-form-subtitle {
+      color: var(--text-mid);
+      font-size: 14px;
+      line-height: 1.72;
+      margin-bottom: 18px;
+    }
+    .medicare-success {
+      display: none;
+      margin-top: 14px;
+      color: #2d5b2b;
+      font-size: 13px;
+      line-height: 1.6;
+      background: rgba(183,214,59,0.18);
+      border: 1px solid rgba(183,214,59,0.34);
+      padding: 12px 14px;
+    }
+
     .pricing-section {
       background: var(--ink);
       color: white;
@@ -1733,6 +1826,7 @@
       .therapist-spotlight-card,
       .providers-grid,
       .care-options-grid,
+      .medicare-wrap,
       .pricing-grid,
       .booking-grid,
       .newsletter-inner,
@@ -1791,6 +1885,8 @@
       .compare-card,
       .service-card,
       .care-option-card,
+      .medicare-copy-card,
+      .medicare-form-card,
       .feature-panel,
       .step-card,
       .provider-head,
@@ -2027,6 +2123,44 @@
           <h3>Functional Neurologic Disorder (FND)</h3>
           <p>Thoughtful, individualized FND rehab focused on listening well, pacing appropriately, retraining movement, and building meaningful daily independence at home and in the community.</p>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section medicare-section" id="medicare-updates">
+    <div class="section-inner">
+      <h2 class="section-title">Medicare Part B Updates</h2>
+      <p class="section-lead">If you are hoping to use Medicare Part B with STRIVE, you can leave your information below and we will reach out when we begin accepting Medicare Part B patients.</p>
+
+      <div class="medicare-wrap">
+        <div class="medicare-copy-card anim">
+          <div class="medicare-kicker">Coming Update</div>
+          <h3>Stay In The Loop For Medicare Part B</h3>
+          <p>We are currently private pay, and Medicare Part B enrollment is still pending. This list is for patients and families who want a direct update once Medicare Part B scheduling becomes available.</p>
+          <div class="medicare-points">
+            <div class="medicare-point">For prospective patients who prefer to wait for Medicare Part B access.</div>
+            <div class="medicare-point">A simple update request, not a commitment and not a guarantee of immediate availability.</div>
+            <div class="medicare-point">We will contact you when that access pathway officially opens.</div>
+          </div>
+        </div>
+
+        <div class="medicare-form-card anim d1">
+          <h3>Request A Medicare Update</h3>
+          <p class="medicare-form-subtitle">Leave your contact information and we will notify you when STRIVE begins accepting Medicare Part B patients.</p>
+          <form id="medicare-form">
+            <div class="form-row">
+              <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Jane" required></div>
+              <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="(702) 555-0000"></div>
+              <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="jane@email.com" required></div>
+            </div>
+            <button class="form-submit" type="submit">Join Medicare Update List &rarr;</button>
+            <p class="form-foot-note">We will only use this information to contact you about Medicare Part B availability.</p>
+            <div class="medicare-success" id="medicare-success">Thank you. We received your request and will update you when Medicare Part B scheduling opens.</div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -2618,6 +2752,31 @@
     });
     form.reset();
     document.getElementById('contact-success').style.display = 'block';
+  });
+
+  document.getElementById('medicare-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = document.getElementById('medicare-form');
+    const data = {
+      first_name: form.first_name.value,
+      last_name: form.last_name.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      subject: 'Medicare Part B Update Request',
+      message:
+        'Please notify me when STRIVE begins accepting Medicare Part B patients.\n\n' +
+        'First Name: ' + form.first_name.value + '\n' +
+        'Last Name: ' + form.last_name.value + '\n' +
+        'Phone: ' + form.phone.value + '\n' +
+        'Email: ' + form.email.value
+    };
+    await fetch('https://formspree.io/f/mlgoanwr', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    form.reset();
+    document.getElementById('medicare-success').style.display = 'block';
   });
 </script>
 
