@@ -592,6 +592,72 @@
     }
     .pt-card.alt .pt-quote cite { color: #1a5276; }
 
+    /* ── SERVICES OVERVIEW ── */
+    .services-section {
+      background: var(--dark3);
+      padding: 88px 5vw;
+      border-top: 1px solid var(--border);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--border);
+      margin-top: 48px;
+    }
+    .service-card {
+      background: var(--dark2);
+      padding: 32px 30px;
+      border-left: 3px solid var(--lime);
+    }
+    .service-kicker {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 12px;
+    }
+    .service-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .service-desc {
+      font-size: 14.5px;
+      line-height: 1.78;
+      color: var(--white-dim);
+      margin-bottom: 18px;
+    }
+    .service-points {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .service-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      line-height: 1.62;
+      color: var(--white-dim);
+    }
+    .service-point::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
+
     /* ── VALUES SECTION ── */
     .values-section {
       background: var(--dark2);
@@ -694,6 +760,7 @@
       .pt-card { grid-template-columns: 1fr; }
       .pt-left { border-right: none; border-bottom: 1px solid var(--border); }
       .pt-photo-wrap { max-height: 280px; aspect-ratio: unset; }
+      .services-grid { grid-template-columns: 1fr; }
       .values-grid { grid-template-columns: 1fr 1fr; }
       .schedule-options { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -703,7 +770,7 @@
       .schedule-dialog { padding: 26px 20px 20px; }
       .schedule-option { min-height: 0; }
       .hero { padding: 72px 5vw 56px; }
-      .providers-section, .values-section, .cta-section { padding: 72px 5vw; }
+      .providers-section, .services-section, .values-section, .cta-section { padding: 72px 5vw; }
       .pt-right { padding: 24px 22px; }
       .spec-grid { grid-template-columns: 1fr 1fr; }
       .values-grid { grid-template-columns: 1fr; }
@@ -948,6 +1015,57 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="services-section">
+  <div class="section-inner">
+    <div class="section-label anim">What We Provide</div>
+    <h2 class="section-h2 anim d1">CARE OPTIONS<br><em>BUILT AROUND REAL LIFE</em></h2>
+    <p class="section-lead anim d2">STRIVE is designed to meet people in the setting that makes the most sense for their goals, their mobility, and the kind of progress they want to make.</p>
+
+    <div class="services-grid">
+      <div class="service-card anim">
+        <div class="service-kicker">01</div>
+        <h3 class="service-title">In-Home Physical Therapy</h3>
+        <p class="service-desc">One-on-one physical therapy delivered in the home for people working toward more independence in daily life, especially when leaving the home is difficult, exhausting, or impractical.</p>
+        <div class="service-points">
+          <div class="service-point">Focused on transfers, walking, balance, endurance, and day-to-day function where it matters most.</div>
+          <div class="service-point">Ideal for patients who want skilled PT in their own environment without the burden of clinic travel.</div>
+        </div>
+      </div>
+
+      <div class="service-card anim d1">
+        <div class="service-kicker">02</div>
+        <h3 class="service-title">Concierge Physical Therapy</h3>
+        <p class="service-desc">Physical therapy that comes to your preferred setting when your goals extend beyond the home and you want treatment in the environment where you actually live, work, and move.</p>
+        <div class="service-points">
+          <div class="service-point">Sessions can be built around spaces like your workplace, a hiking setting, or your preferred gym.</div>
+          <div class="service-point">Best for patients who want PT integrated into real-world activities, performance goals, or community mobility.</div>
+        </div>
+      </div>
+
+      <div class="service-card anim d2">
+        <div class="service-kicker">03</div>
+        <h3 class="service-title">Gym-Based Physical Therapy</h3>
+        <p class="service-desc">Outpatient-style neuro physical therapy using our own gym space for people who need higher-level movement work, progressive loading, and more room to train complex tasks.</p>
+        <div class="service-points">
+          <div class="service-point">Emphasis on lifting, balance, motor planning, gait progression, and building capacity in a structured rehab setting.</div>
+          <div class="service-point">A strong fit for patients who are ready for a more intensive clinic-style environment.</div>
+        </div>
+      </div>
+
+      <div class="service-card anim d3">
+        <div class="service-kicker">04</div>
+        <h3 class="service-title">Wellness Classes</h3>
+        <p class="service-desc">Structured group classes designed to keep people improving beyond traditional rehab through smart, progressive training in a supportive setting.</p>
+        <div class="service-points">
+          <div class="service-point">Classes focus on strength, agility, endurance, balance, and motor planning.</div>
+          <div class="service-point">Built for people who want consistency, challenge, and community as part of their long-term recovery and wellness plan.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
