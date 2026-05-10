@@ -487,9 +487,27 @@
       display: flex;
       align-items: center;
     }
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .hero::before {
+      z-index: 0;
+      background: url('hero-physical-therapy-home.jpg') center right / cover no-repeat;
+    }
+    .hero::after {
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(5, 26, 56, 0.98) 0%, rgba(8, 61, 122, 0.86) 38%, rgba(8, 61, 122, 0.48) 68%, rgba(8, 61, 122, 0.24) 100%),
+        linear-gradient(180deg, rgba(5, 26, 56, 0.38) 0%, rgba(5, 26, 56, 0.2) 46%, rgba(5, 26, 56, 0.62) 100%);
+    }
     .hero-grid {
       position: absolute;
       inset: 0;
+      z-index: 1;
       background: none;
       opacity: 0;
       pointer-events: none;
@@ -596,9 +614,10 @@
       background: rgba(255,255,255,0.04);
     }
     .hero-panel {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.14);
+      background: rgba(5,26,56,0.54);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.24);
+      backdrop-filter: blur(10px);
       position: relative;
       overflow: hidden;
     }
@@ -1943,6 +1962,12 @@
 
     @media (max-width: 640px) {
       .hero { padding: 92px 5vw 68px; min-height: auto; }
+      .hero::before { background-position: 78% center; }
+      .hero::after {
+        background:
+          linear-gradient(180deg, rgba(5, 26, 56, 0.92) 0%, rgba(8, 61, 122, 0.8) 44%, rgba(8, 61, 122, 0.66) 100%),
+          linear-gradient(90deg, rgba(5, 26, 56, 0.86) 0%, rgba(5, 26, 56, 0.36) 100%);
+      }
       .hero h1 .hero-mark { font-size: 1.3em; }
       .schedule-modal { padding: 14px; }
       .schedule-dialog { padding: 26px 20px 20px; }
