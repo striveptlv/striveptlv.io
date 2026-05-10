@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1f2344">
+  <meta name="theme-color" content="#083d7a">
   <meta name="application-name" content="STRIVE Physical Therapy">
   <meta name="apple-mobile-web-app-title" content="STRIVE PT">
   <meta name="format-detection" content="telephone=no, email=no, address=no">
@@ -96,16 +96,16 @@
 
   <style>
     :root {
-      --ink: #1f2344;
-      --ink-soft: #2f3768;
+      --ink: #083d7a;
+      --ink-soft: #24548d;
       --paper: #f7f4ef;
       --paper-deep: #ece6de;
       --panel: #ffffff;
-      --line: rgba(31,35,68,0.1);
-      --line-strong: rgba(31,35,68,0.18);
-      --text: #23284d;
-      --text-mid: #5d668f;
-      --text-soft: #8a93b3;
+      --line: rgba(8,61,122,0.1);
+      --line-strong: rgba(8,61,122,0.18);
+      --text: #0e2f5d;
+      --text-mid: #3f5a82;
+      --text-soft: #6c86aa;
       --accent: #e68a4d;
       --accent-deep: #8ecae6;
       --accent-pale: rgba(230,138,77,0.12);
@@ -168,6 +168,7 @@
       text-transform: uppercase;
       margin-top: 2px;
     }
+    nav .logo-sub { color: #000000; }
     .nav-links { display: flex; align-items: center; gap: 22px; }
     .nav-links a {
       color: var(--text-mid);
@@ -531,9 +532,15 @@
       letter-spacing: 0.5px;
       text-transform: none;
       color: white;
+      text-shadow: 0 2px 0 rgba(5, 26, 56, 0.42), 0 12px 28px rgba(5, 26, 56, 0.3);
       margin-bottom: 16px;
     }
-    .hero h1 .hero-mark { color: var(--accent); }
+    .hero h1 .hero-mark {
+      display: block;
+      font-size: 1.18em;
+      line-height: 0.86;
+      color: var(--accent);
+    }
     .hero h1 em {
       display: block;
       font-style: italic;
@@ -616,33 +623,18 @@
     }
     .hero-panel-body {
       padding: 0 30px 18px 34px;
-      counter-reset: hero-points;
     }
     .hero-point {
-      display: flex;
-      gap: 14px;
+      display: block;
       padding: 16px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      counter-increment: hero-points;
     }
     .hero-point:last-child { border-bottom: none; }
     .hero-dot {
-      width: 32px;
-      height: 32px;
-      background: rgba(142,202,230,0.16);
-      color: var(--accent-deep);
-      border: 1px solid rgba(142,202,230,0.3);
-      flex-shrink: 0;
-      margin-top: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
+      display: none;
     }
     .hero-dot::before {
-      content: counter(hero-points);
+      content: none;
     }
     .hero-point strong {
       display: block;
@@ -660,32 +652,45 @@
     }
 
     .bar-banner {
-      background: var(--ink);
-      color: rgba(255,255,255,0.72);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: var(--accent);
+      color: #000000;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
       padding: 18px 5vw;
     }
     .bar-inner {
-      max-width: 1160px;
-      margin: 0 auto;
       display: flex;
-      gap: 18px;
       align-items: center;
-      flex-wrap: wrap;
-      justify-content: center;
-      text-align: center;
+      gap: 18px;
+      width: max-content;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.6px;
       text-transform: uppercase;
+      white-space: nowrap;
+      animation: bar-scroll 13s linear infinite;
     }
-    .bar-inner strong { color: white; }
+    .bar-inner strong { color: #000000; }
     .bar-split {
       width: 5px;
       height: 5px;
-      background: var(--accent);
+      background: rgba(0,0,0,0.65);
       flex-shrink: 0;
+    }
+    .bar-track {
+      max-width: 1160px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    @keyframes bar-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (min-width: 961px) {
+      .bar-inner {
+        gap: 30px;
+        animation-duration: 10s;
+      }
     }
 
     .difference-section { background: var(--paper); }
@@ -758,8 +763,9 @@
     .service-card {
       display: block;
       text-decoration: none;
-      background: var(--panel);
-      border: 1px solid var(--line);
+      background: #f6f2eb;
+      border: 1px solid rgba(8,61,122,0.16);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.08);
       padding: 30px 28px;
       min-height: 240px;
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
@@ -773,15 +779,15 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: var(--accent-deep);
+      background: var(--accent);
       transform: scaleX(0.35);
       transform-origin: left;
       transition: transform 0.2s;
     }
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(18,23,21,0.08);
-      border-color: rgba(18,23,21,0.18);
+      box-shadow: 0 22px 42px rgba(0,0,0,0.12);
+      border-color: rgba(8,61,122,0.26);
     }
     .service-card:hover::before { transform: scaleX(1); }
     .service-card h3 {
@@ -790,7 +796,7 @@
       line-height: 0.98;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--ink);
+      color: #000000;
       margin-bottom: 16px;
     }
     .service-card p {
@@ -809,12 +815,13 @@
       margin-top: 44px;
     }
     .tool-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: #f6f2eb;
+      border: 1px solid rgba(8,61,122,0.16);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.1);
       padding: 30px 28px;
       position: relative;
       overflow: hidden;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
     .tool-card::before {
       content: '';
@@ -825,14 +832,18 @@
       height: 3px;
       background: linear-gradient(90deg, var(--accent), var(--accent-deep));
     }
-    .tool-card:hover { border-color: rgba(255,255,255,0.22); }
+    .tool-card:hover {
+      border-color: rgba(8,61,122,0.26);
+      box-shadow: 0 22px 42px rgba(0,0,0,0.14);
+      transform: translateY(-3px);
+    }
     .tool-tag {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 2.8px;
       text-transform: uppercase;
-      color: var(--accent-deep);
+      color: var(--ink);
       margin-bottom: 10px;
     }
     .tool-card h3 {
@@ -841,12 +852,12 @@
       line-height: 0.98;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      color: white;
+      color: #000000;
       margin-bottom: 10px;
     }
     .tool-card p {
       font-size: 14px;
-      color: rgba(255,255,255,0.68);
+      color: #000000;
       line-height: 1.78;
       margin-bottom: 22px;
     }
@@ -860,7 +871,7 @@
       display: flex;
       gap: 10px;
       align-items: flex-start;
-      color: rgba(255,255,255,0.65);
+      color: #000000;
       font-size: 13.5px;
       line-height: 1.6;
     }
@@ -873,13 +884,14 @@
       margin-top: 7px;
     }
     .tool-card .btn-outline {
-      color: white;
-      border-color: rgba(255,255,255,0.22);
+      color: #000000;
+      background: var(--accent);
+      border-color: var(--accent);
     }
     .tool-card .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(255,255,255,0.04);
+      border-color: #f0a26d;
+      color: #000000;
+      background: #f0a26d;
     }
 
     .feature-section {
@@ -1620,7 +1632,7 @@
     }
     .contact-panel p,
     .form-subtitle {
-      color: var(--text-mid);
+      color: #000000;
       font-size: 14.5px;
       line-height: 1.8;
       margin-bottom: 24px;
@@ -1634,7 +1646,7 @@
     .c-dot {
       width: 8px;
       height: 8px;
-      background: var(--accent-deep);
+      background: var(--ink);
       flex-shrink: 0;
       margin-top: 7px;
     }
@@ -1645,11 +1657,11 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--accent-deep);
+      color: #000000;
       margin-bottom: 4px;
     }
     .c-text span {
-      color: var(--text-mid);
+      color: #000000;
       font-size: 14px;
       line-height: 1.7;
     }
@@ -1663,7 +1675,7 @@
     .book-cta-box p {
       font-size: 13.5px;
       line-height: 1.7;
-      color: var(--text-mid);
+      color: #000000;
       margin-bottom: 14px;
     }
     .book-cta-box .btn-primary {
@@ -1724,7 +1736,7 @@
     .form-submit:hover { background: var(--accent-deep); transform: translateY(-1px); }
     .form-foot-note {
       margin-top: 12px;
-      color: var(--text-soft);
+      color: #000000;
       font-size: 12px;
       line-height: 1.6;
     }
@@ -1771,7 +1783,7 @@
       content: '';
       width: 6px;
       height: 6px;
-      background: var(--accent);
+      background: #0e2f5d;
       flex-shrink: 0;
       margin-top: 7px;
     }
@@ -1931,6 +1943,7 @@
 
     @media (max-width: 640px) {
       .hero { padding: 92px 5vw 68px; min-height: auto; }
+      .hero h1 .hero-mark { font-size: 1.3em; }
       .schedule-modal { padding: 14px; }
       .schedule-dialog { padding: 26px 20px 20px; }
       .schedule-option { min-height: 0; }
@@ -2155,10 +2168,28 @@
   </section>
 
   <div class="bar-banner">
-    <div class="bar-inner">
-      <span>Now seeing patients</span>
-      <span class="bar-split"></span>
-      <span>Direct access care</span>
+    <div class="bar-track">
+      <div class="bar-inner">
+        <span>Now seeing patients</span>
+        <span class="bar-split"></span>
+        <span>Direct access care</span>
+        <span class="bar-split"></span>
+        <span>Stroke rehabilitation</span>
+        <span class="bar-split"></span>
+        <span>Vestibular rehab</span>
+        <span class="bar-split"></span>
+        <span>Neuro wellness</span>
+        <span class="bar-split"></span>
+        <span>Now seeing patients</span>
+        <span class="bar-split"></span>
+        <span>Direct access care</span>
+        <span class="bar-split"></span>
+        <span>Stroke rehabilitation</span>
+        <span class="bar-split"></span>
+        <span>Vestibular rehab</span>
+        <span class="bar-split"></span>
+        <span>Neuro wellness</span>
+      </div>
     </div>
   </div>
 
@@ -2275,7 +2306,7 @@
       <div class="tools-grid">
         <div class="tool-card anim">
           <div class="tool-tag">Free Web App · OT + Rehab</div>
-          <h3>Bill Pay &amp; Money Management</h3>
+          <h3>Bill Pay Simulator and Money Management Platform</h3>
           <p>A simple, structured app to help patients with neurological conditions manage bills, track spending, and practice real-world money tasks — especially useful after stroke, TBI, or when cognitive skills are rebuilding.</p>
           <div class="tool-features">
             <div class="tool-feature">Designed for patients with cognitive or ADL challenges</div>
