@@ -38,6 +38,11 @@
         "alternateName": ["STRIVE PT","STRIVE PT Las Vegas","STRIVE Physical Therapy Las Vegas"],
         "url": "https://striveptlv.com/",
         "image": "https://striveptlv.com/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/striveptlv",
+          "https://www.instagram.com/striveptlv/",
+          "https://open.spotify.com/show/2nbFBV45QpM37SAdHtobgF"
+        ],
         "description": "STRIVE PT is a 1-on-1 in-home physical therapy and mobile physical therapy practice in Las Vegas, Nevada including neurological physical therapy, stroke rehabilitation, vestibular rehabilitation, spinal cord injury rehab, prosthetic rehab, FND rehab, and neuro wellness classes and programs.",
         "address": {
           "@type": "PostalAddress",
@@ -629,6 +634,43 @@
       margin-bottom: 34px;
     }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .hero-social {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 18px;
+      width: 100%;
+    }
+    .hero-social a {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.74);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .hero-social a:hover {
+      color: var(--accent);
+      border-color: rgba(230,138,77,0.7);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-1px);
+    }
+    .hero-social svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
     .hero .btn-primary {
       background: var(--accent);
       color: var(--ink);
@@ -644,6 +686,7 @@
       background: rgba(255,255,255,0.04);
     }
     .hero-panel {
+      width: 100%;
       background: rgba(5,26,56,0.54);
       border: 1px solid rgba(255,255,255,0.16);
       box-shadow: 0 20px 50px rgba(0,0,0,0.24);
@@ -1927,6 +1970,21 @@
       margin-top: 16px;
       max-width: 280px;
     }
+    .footer-social {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .footer-social a {
+      color: rgba(255,255,255,0.68);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .footer-social a:hover { color: white; }
     .footer-col h4 {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 12px;
@@ -2091,7 +2149,7 @@
         <div class="dropdown-menu">
           <a href="/wellness.html">Wellness Classes</a>
           <a href="/stroke.html">Stroke Rehab</a>
-          <a href="sci.html">SCI Rehab</a>
+          <a href="sci.html">SCI Physical Therapy</a>
           <a href="vestibular-rehab.html">Vestibular Rehab</a>
           <a href="/fnd.html">FND Rehab</a>
         </div>
@@ -2107,6 +2165,7 @@
     <div class="nav-dropdown">
       <a href="#">Clinicians</a>
       <div class="dropdown-menu">
+        <a href="/referrals.html">Refer a Patient</a>
         <a href="https://striveptlv.com/moneymanagement/">OT Bank App</a>
         <a href="/vo">Vestibular App</a>
       </div>
@@ -2128,7 +2187,7 @@
     <div class="mob-dropdown-items" id="servicesItems">
       <a href="/wellness.html" onclick="toggleMenu(false)">Wellness Classes</a>
       <a href="/stroke.html" onclick="toggleMenu(false)">Stroke Rehab</a>
-      <a href="sci.html" onclick="toggleMenu(false)">SCI Rehab</a>
+      <a href="sci.html" onclick="toggleMenu(false)">SCI Physical Therapy</a>
       <a href="vestibular-rehab.html" onclick="toggleMenu(false)">Vestibular Rehab</a>
       <a href="/fnd.html" onclick="toggleMenu(false)">FND Rehab</a>
     </div>
@@ -2148,6 +2207,7 @@
       Clinicians <span class="mob-arrow">›</span>
     </div>
     <div class="mob-dropdown-items" id="cliniciansItems">
+      <a href="/referrals.html" onclick="toggleMenu(false)">Refer a Patient</a>
       <a href="https://striveptlv.com/moneymanagement/" onclick="toggleMenu(false)">OT Bank App</a>
       <a href="/vo" onclick="toggleMenu(false)">Vestibular App</a>
     </div>
@@ -2198,25 +2258,46 @@
           <a href="#services" class="btn-outline">Explore Services</a>
         </div>
       </div>
-      <div class="hero-panel anim d2">
-        <div class="hero-panel-head">Why Patients and Families Choose STRIVE</div>
-        <div class="hero-panel-body">
-          <div class="hero-point">
-            <div class="hero-dot"></div>
-            <div><strong>True 1-on-1 Sessions</strong><span>Your therapist stays with you for the full session. No aides. No juggling multiple patients.</span></div>
+      <div class="hero-side">
+        <div class="hero-panel anim d2">
+          <div class="hero-panel-head">Why Patients and Families Choose STRIVE</div>
+          <div class="hero-panel-body">
+            <div class="hero-point">
+              <div class="hero-dot"></div>
+              <div><strong>True 1-on-1 Sessions</strong><span>Your therapist stays with you for the full session. No aides. No juggling multiple patients.</span></div>
+            </div>
+            <div class="hero-point">
+              <div class="hero-dot"></div>
+              <div><strong>Licensed Providers</strong><span>Stroke and brain injury certifications backed by more than a decade of clinical experience.</span></div>
+            </div>
+            <div class="hero-point">
+              <div class="hero-dot"></div>
+              <div><strong>Mobile PT Across Las Vegas</strong><span>In-home physical therapy happens where daily life actually takes place, which makes treatment more practical and more relevant.</span></div>
+            </div>
+            <div class="hero-point">
+              <div class="hero-dot"></div>
+              <div><strong>Outpatient Neuro Movement Gym</strong><span>Now open and fully operating at Shinkyokushin Karate Las Vegas. Join us for Saturday neuro movement gym classes and wellness programs.</span></div>
+            </div>
           </div>
-          <div class="hero-point">
-            <div class="hero-dot"></div>
-            <div><strong>Licensed Providers</strong><span>Stroke and brain injury certifications backed by more than a decade of clinical experience.</span></div>
-          </div>
-          <div class="hero-point">
-            <div class="hero-dot"></div>
-            <div><strong>Mobile PT Across Las Vegas</strong><span>In-home physical therapy happens where daily life actually takes place, which makes treatment more practical and more relevant.</span></div>
-          </div>
-          <div class="hero-point">
-            <div class="hero-dot"></div>
-            <div><strong>Outpatient Neuro Movement Gym</strong><span>Now open and fully operating at Shinkyokushin Karate Las Vegas. Join us for Saturday neuro movement gym classes and wellness programs.</span></div>
-          </div>
+        </div>
+        <div class="hero-social anim d3" aria-label="STRIVE social media links">
+          <a href="https://www.facebook.com/striveptlv" target="_blank" rel="noopener" aria-label="Visit STRIVE PT on Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M14.25 8.25V6.8c0-.7.46-.86.78-.86h1.98V3.06L14.28 3c-3.03 0-3.72 2.27-3.72 3.72v1.53H8.1v3.22h2.46V21h3.34v-9.53h2.77l.13-1.27.24-1.95h-3.79Z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/striveptlv/" target="_blank" rel="noopener" aria-label="Visit STRIVE PT on Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="none" stroke="currentColor" stroke-width="1.8" d="M7.8 3.8h8.4a4 4 0 0 1 4 4v8.4a4 4 0 0 1-4 4H7.8a4 4 0 0 1-4-4V7.8a4 4 0 0 1 4-4Z"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.5 12a3.5 3.5 0 1 0 7 0 3.5 3.5 0 0 0-7 0Z"/>
+              <path fill="currentColor" d="M17.25 7.55a.85.85 0 1 0 0-1.7.85.85 0 0 0 0 1.7Z"/>
+            </svg>
+          </a>
+          <a href="https://open.spotify.com/show/2nbFBV45QpM37SAdHtobgF?si=Gns3Ft-7SgCNdGbmnOcpag" target="_blank" rel="noopener" aria-label="Listen to STRIVE PT on Spotify">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M12 3.4a8.6 8.6 0 1 0 0 17.2 8.6 8.6 0 0 0 0-17.2Zm3.95 12.38a.7.7 0 0 1-.96.24c-2.64-1.6-5.8-1.18-7.36-.72a.7.7 0 0 1-.4-1.34c1.78-.53 5.37-1 8.48.88a.7.7 0 0 1 .24.94Zm1.02-2.5a.78.78 0 0 1-1.07.27c-3.08-1.88-6.95-1.6-9.03-.98a.78.78 0 1 1-.45-1.49c2.4-.72 6.76-1.02 10.28 1.13.37.22.49.7.27 1.07Zm.1-2.63c-3.55-2.1-8.1-1.86-10.54-1.17a.86.86 0 0 1-.47-1.66c2.76-.78 7.8-1.04 11.9 1.39a.86.86 0 1 1-.88 1.44Z"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -2284,7 +2365,7 @@
   <section class="section services-section" id="services">
     <div class="section-inner">
       <h2 class="section-title">In-home physical therapy, mobile PT, and neuro wellness services</h2>
-      <p class="section-lead">STRIVE provides in-home physical therapy and mobile physical therapy in Las Vegas, including stroke rehab, neurological physical therapy, vestibular rehab, wellness classes and programs, SCI rehab, prosthetic rehab, and FND care. Most services are delivered one-on-one in your home, with Saturday wellness options at our movement gym.</p>
+      <p class="section-lead">STRIVE provides in-home physical therapy and mobile physical therapy in Las Vegas, including stroke rehab, neurological physical therapy, vestibular rehab, wellness classes and programs, SCI physical therapy, prosthetic rehab, and FND care. Most services are delivered one-on-one in your home, with Saturday wellness and strengthening options at our movement gym.</p>
 
       <div class="services-grid">
         <a href="/stroke.html" class="service-card anim">
@@ -2300,8 +2381,8 @@
           <p>Wheelchair-friendly neuro wellness classes and structured programs that support strength, endurance, balance, long-term mobility, and confidence after traditional therapy ends.</p>
         </a>
         <a href="sci.html" class="service-card anim d1">
-          <h3>Spinal Cord Injury / SCI Rehabilitation</h3>
-          <p>Individualized spinal cord injury rehab focused on strength, mobility, transfers, balance, wheelchair function, and building safer day-to-day independence at home and in the community.</p>
+          <h3>Spinal Cord Injury / SCI Physical Therapy</h3>
+          <p>Individualized spinal cord injury rehab in Las Vegas focused on strength, mobility, transfers, balance, wheelchair function, and safer day-to-day independence at home or in the Neuro Movement Gym.</p>
         </a>
         <a href="/prosthetic.html" class="service-card anim">
           <h3>Post-Amputation Rehabilitation</h3>
@@ -2773,6 +2854,10 @@
           </div>
         </a>
         <p>In-home physical therapy and mobile physical therapy delivered 1-on-1 in your Las Vegas home. Now seeing patients across the Las Vegas valley.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://www.facebook.com/striveptlv" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/striveptlv/" target="_blank" rel="noopener">Instagram</a>
+        </div>
       </div>
 
       <div class="footer-col">
@@ -2780,6 +2865,7 @@
         <a href="#care-options">In-Home Physical Therapy</a>
         <a href="#care-options">Mobile Physical Therapy</a>
         <a href="/stroke.html">Stroke Rehab</a>
+        <a href="sci.html">SCI Physical Therapy</a>
         <a href="vestibular-rehab.html">Vestibular Rehab</a>
         <a href="#services">Balance &amp; Fall Prevention</a>
         <a href="#services">Concussion Rehab</a>
@@ -2792,6 +2878,7 @@
         <a href="#difference">Why 1-on-1 PT</a>
         <a href="#pricing">Payment Options</a>
         <a href="#faq">FAQ</a>
+        <a href="/referrals.html">Refer a Patient</a>
         <a href="#contact">Contact Us</a>
         <a href="https://striveptlv.com/moneymanagement/">Patient Resource</a>
         <a href="/insights">Insights Archive</a>
