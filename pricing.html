@@ -350,17 +350,43 @@
       .section { padding: 48px 5vw; }
       .section-lead { font-size: 15px; line-height: 1.72; }
       .pricing-section { padding: 0 0 48px; }
+      .pricing-section > .section-inner { padding: 0 3.75vw; }
       .addons-grid,
-      .detail-grid,
+      .detail-grid { grid-template-columns: 1fr; gap: 10px; }
       .pricing-hero { min-height: 390px; margin-bottom: 32px; align-items: flex-end; }
       .pricing-hero::before { background: linear-gradient(180deg, rgba(247,244,239,0.18) 0%, rgba(247,244,239,0.86) 60%, var(--paper) 100%); }
       .pricing-hero img { object-position: center; }
       .pricing-hero-content { padding: 28px 5vw; }
       .pricing-hero .section-title { font-size: clamp(42px, 13vw, 58px); }
       .pricing-hero .section-lead { font-size: 15.5px; }
+      .pricing-group { margin-top: 28px; }
+      .pricing-group-title { font-size: 30px; margin-bottom: 6px; }
+      .pricing-group-lead { font-size: 14px; line-height: 1.55; margin-bottom: 14px; }
       .core-pricing-grid .addon-card { grid-column: span 1; }
       .addon-card.inclusive-card { grid-column: span 1; }
-      .addon-list { grid-template-columns: 1fr; }
+      .addon-card { min-height: 0; padding: 16px 14px; }
+      .addon-card h3 { font-size: 23px; margin-bottom: 8px; }
+      .addon-card p { font-size: 13.5px; line-height: 1.45; margin-bottom: 12px; }
+      .addon-list { grid-template-columns: 1fr; gap: 6px; margin-bottom: 12px; }
+      .addon-list li { font-size: 12.8px; line-height: 1.34; }
+      .addon-price { font-size: 22px; padding-top: 10px; }
+      .core-pricing-grid .addon-price { font-size: clamp(38px, 13vw, 50px); }
+      .core-pricing-grid .price-was { font-size: clamp(24px, 8vw, 30px); }
+      .price-prefix { font-size: 9.5px; letter-spacing: 1.1px; }
+      .card-actions { margin-top: 10px; }
+      .card-actions .btn-primary,
+      .card-actions .btn-outline { min-height: 42px; font-size: 10px; padding: 0 12px; }
+      .expense-grid,
+      .wellness-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: none; }
+      .expense-grid .addon-card,
+      .wellness-grid .addon-card { padding: 14px 12px; }
+      .expense-grid .addon-card h3,
+      .wellness-grid .addon-card h3 { font-size: 20px; }
+      .expense-grid .addon-card p,
+      .wellness-grid .addon-card p { font-size: 12.5px; }
+      .expense-grid .addon-price,
+      .wellness-grid .addon-price { font-size: 20px; }
+      .service-footnote { font-size: 12.5px; line-height: 1.45; }
       .program-card { padding: 26px 20px; }
       .price-list,
       .value-points { grid-template-columns: 1fr; }
