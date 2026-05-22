@@ -1,0 +1,1190 @@
+---
+permalink: /talk/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIVE Talk | Your Voice, Anywhere</title>
+<meta name="description" content="STRIVE Talk is a mobile AAC companion for people with aphasia and communication challenges. Built for real-world, on-the-go communication.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #08111f;
+  --ink: #eaf4ff;
+  --ink-deep: #07101d;
+  --paper: #08111f;
+  --paper-deep: #101b2b;
+  --panel: rgba(12,24,40,0.72);
+  --electric: #8ecae6;
+  --electric-dim: rgba(142,202,230,0.12);
+  --electric-glow: rgba(142,202,230,0.22);
+  --white: #f7fbff;
+  --off-white: #dce9f7;
+  --muted: rgba(220,233,247,0.66);
+  --muted-strong: rgba(220,233,247,0.84);
+  --card-bg: rgba(12,24,40,0.72);
+  --card-border: rgba(142,202,230,0.18);
+  --gold: #e68a4d;
+  --orange: #e68a4d;
+  --orange-dim: rgba(230,138,77,0.12);
+  --orange-glow: rgba(230,138,77,0.28);
+  --green: #2e7d5b;
+  --line: rgba(220,233,247,0.12);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(142,202,230,0.22) 0%, rgba(142,202,230,0.08) 30%, transparent 58%),
+    radial-gradient(circle at 85% 20%, rgba(230,138,77,0.12) 0%, transparent 32%),
+    linear-gradient(180deg, #07101d 0%, #0b1626 44%, #08111f 100%);
+  color: var(--off-white);
+  overflow-x: hidden;
+  line-height: 1.65;
+  padding-top: 70px;
+}
+
+body::before {
+  content: none;
+}
+
+.orb { display: none; }
+
+section, nav, footer { position: relative; z-index: 1; }
+
+/* NAV */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+  padding: 0 5vw;
+  border-bottom: 1px solid var(--line);
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(8,17,31,0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.logo-img { width: 46px; height: 46px; object-fit: contain; flex-shrink: 0; }
+.logo-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--white);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.logo-sub {
+  font-size: 9px;
+  color: rgba(220,233,247,0.78);
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.nav-links { display: flex; align-items: center; gap: 22px; }
+.nav-links a {
+  color: rgba(220,233,247,0.72);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--ink); }
+.nav-dropdown { position: relative; display: flex; align-items: center; justify-content: center; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 5px; padding: 24px 0; }
+.nav-dropdown > a::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid rgba(220,233,247,0.62);
+  transition: transform 0.2s, border-top-color 0.2s;
+}
+.nav-dropdown:hover > a::after { transform: rotate(180deg); border-top-color: var(--ink); }
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 178px;
+  background: rgba(12,24,40,0.96);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.24);
+  text-align: center;
+  transition: opacity 0.15s;
+}
+.nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: rgba(220,233,247,0.72);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  text-align: center;
+}
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover, .dropdown-menu a[aria-current="page"] { background: rgba(255,255,255,0.04); color: var(--white); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-toggle span { width: 24px; height: 2px; background: var(--white); }
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #08111f;
+  z-index: 99;
+  padding: 28px 6vw;
+  overflow-y: auto;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  text-decoration: none;
+  color: var(--off-white);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+.mob-cta {
+  background: var(--orange);
+  color: #07101d !important;
+  text-align: center;
+  border-radius: 2px;
+  margin-top: 24px;
+  border: none !important;
+}
+.mob-dropdown { border-bottom: 1px solid var(--line); }
+.mob-dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--off-white);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 15px 0;
+  cursor: pointer;
+}
+.mob-arrow { font-size: 20px; color: var(--orange); transition: transform 0.25s; }
+.mob-arrow.open { transform: rotate(90deg); }
+.mob-dropdown-items { display: none; flex-direction: column; padding-left: 14px; }
+.mob-dropdown-items.open { display: flex; }
+.mob-dropdown-items a { font-size: 15px !important; text-transform: none; letter-spacing: 0; font-weight: 600; }
+.nav-cta {
+  background: var(--orange);
+  color: #07101d !important;
+  font-weight: 700; font-size: 13px;
+  padding: 10px 18px; border-radius: 2px;
+  border: none; cursor: pointer; text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.nav-cta:hover { background: #f0a26d; color: #07101d !important; transform: translateY(-1px); box-shadow: none; }
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+}
+
+/* HERO */
+.hero {
+  padding: 7rem 6% 5rem;
+  max-width: 1100px; margin: 0 auto; text-align: center;
+}
+
+.pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--orange-dim); border: 1px solid rgba(230,138,77,0.28);
+  color: var(--orange); font-size: 0.95rem; font-weight: 700;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  padding: 0.38rem 1rem; border-radius: 100px; margin-bottom: 1.8rem;
+}
+.pill::before { content: '●'; font-size: 0.55rem; animation: pulse-dot 1.8s ease-in-out infinite; }
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+h1 {
+  font-family: 'Sora', sans-serif; font-weight: 800;
+  font-size: clamp(3.35rem, 7.2vw, 6.4rem);
+  line-height: 0.98; letter-spacing: -0.04em;
+  color: var(--white); margin-bottom: 1.4rem;
+}
+h1 em {
+  font-style: normal; color: var(--orange);
+  position: relative; display: inline-block;
+}
+h1 em::after {
+  content: ''; position: absolute; bottom: 4px; left: 0; right: 0;
+  height: 3px; background: var(--orange); border-radius: 2px; opacity: 0.42;
+}
+
+.hero-sub {
+  font-size: clamp(1.22rem, 2.2vw, 1.42rem); color: var(--muted-strong);
+  max-width: 680px; margin: 0 auto 2.5rem; font-weight: 400;
+}
+.hero-sub strong { color: var(--ink); font-weight: 700; }
+
+.cta-group {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1rem; flex-wrap: wrap; margin-bottom: 2.8rem;
+}
+
+.btn-primary {
+  background: var(--orange); color: #061f3f;
+  font-weight: 700; font-size: 1.1rem;
+  padding: 1rem 2.35rem; border-radius: 100px;
+  border: none; cursor: pointer; text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s; white-space: nowrap;
+  display: inline-block;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(8,61,122,0.12); }
+
+.btn-ghost {
+  background: transparent; color: var(--white);
+  font-weight: 600; font-size: 1.05rem;
+  padding: 1rem 1.95rem; border-radius: 100px;
+  border: 1px solid var(--line);
+  cursor: pointer; text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn-ghost:hover { border-color: rgba(220,233,247,0.42); background: rgba(220,233,247,0.06); }
+
+.hero-trust {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; flex-wrap: wrap; font-size: 1rem; color: var(--muted-strong);
+}
+.trust-item { display: flex; align-items: center; gap: 0.4rem; }
+.trust-item::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 0.88rem; }
+
+/* PHONE MOCKUP */
+.mockup-wrap { width: min(78vw, 315px); margin: 4rem auto 0; position: relative; }
+.mockup-glow {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px; height: 300px;
+  background: radial-gradient(ellipse, rgba(185,227,247,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.phone-frame {
+  background: #0D1E36; border-radius: 42px;
+  border: 2px solid rgba(0,212,255,0.22);
+  padding: 13px;
+  aspect-ratio: 9 / 19.5;
+  box-shadow: 0 38px 72px rgba(0,0,0,0.42), 0 0 0 1px rgba(185,227,247,0.08), inset 0 0 34px rgba(185,227,247,0.025);
+  position: relative; z-index: 2;
+  animation: float 5s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+.phone-screen {
+  background: #0B1628;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.phone-status { display: flex; justify-content: space-between; font-size: 0.8rem; color: rgba(245,250,255,0.68); margin-bottom: 0.9rem; padding: 0 0.2rem; }
+.phone-appbar { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+.phone-appbar-logo { width: 28px; height: 28px; background: var(--electric); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: var(--navy); }
+.phone-appbar-title { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); }
+.yes-no-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.62rem; margin-bottom: 0.9rem; }
+.choice-card {
+  min-height: 112px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1;
+  border: 3px solid rgba(255,255,255,0.16);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.22);
+}
+.choice-card .icon { font-size: 2.5rem; line-height: 1; }
+.choice-yes { background: #2FB86F; border-color: rgba(21,128,61,0.78); }
+.choice-no { background: #D94848; border-color: rgba(153,27,27,0.7); }
+.phone-section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #A7C7FF;
+  text-transform: uppercase;
+  margin-bottom: 0.48rem;
+}
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.58rem; margin-bottom: 0.5rem; flex: 1; align-content: start; }
+.comm-card { border-radius: 12px; padding: 0.95rem 0.5rem; text-align: center; border: 1px solid rgba(255,255,255,0.1); font-size: 0.82rem; font-weight: 700; min-height: 78px; }
+.comm-card .icon { font-size: 1.25rem; display: block; margin-bottom: 0.2rem; }
+.cc-blue  { background: rgba(59,142,240,0.14); color: #A7C7FF; border-color: rgba(59,142,240,0.24); }
+.cc-teal  { background: rgba(94,234,212,0.1);  color: #8FF7E9; border-color: rgba(94,234,212,0.2); }
+.cc-coral { background: rgba(125,211,252,0.1);  color: #BAE6FD; border-color: rgba(125,211,252,0.2); }
+.cc-gold  { background: rgba(167,199,231,0.1);  color: #D5E9FA; border-color: rgba(167,199,231,0.2); }
+.cc-green { background: rgba(94,234,212,0.12);  color: #5EEAD4; border-color: rgba(94,234,212,0.22); }
+.cc-purple{ background: rgba(147,197,253,0.1); color: #BFDBFE; border-color: rgba(147,197,253,0.2); }
+.speak-bar {
+  background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.22);
+  border-radius: 10px; padding: 0.6rem 0.8rem;
+  display: flex; align-items: center; justify-content: space-between; margin-top: auto;
+}
+.speak-bar span { font-size: 0.78rem; color: #7CEBFF; }
+.speak-btn { background: var(--electric); color: var(--navy); border: none; border-radius: 6px; padding: 0.32rem 0.68rem; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+
+/* SHARED SECTION CHROME */
+.section-label { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.7rem; }
+.section-title { font-family: 'Sora', sans-serif; font-weight: 800; font-size: clamp(2.35rem, 4.7vw, 4.4rem); line-height: 1.02; letter-spacing: -0.04em; color: var(--white); margin-bottom: 1rem; }
+.section-sub { font-size: clamp(1.15rem, 1.8vw, 1.35rem); color: var(--muted-strong); max-width: 700px; font-weight: 400; margin-bottom: 3.5rem; }
+
+/* ── PAIN — scroll-reveal typographic list ── */
+.pain {
+  padding: 4.5rem 6%;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.pain::before {
+  content: '';
+  position: absolute;
+  inset: 4rem 2vw auto;
+  height: 240px;
+  background: radial-gradient(ellipse at top left, rgba(255,255,255,0.05), transparent 68%);
+  pointer-events: none;
+}
+.pain .section-title em,
+.pain-title { color: var(--white); }
+.pain .section-label {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(4.8rem, 13vw, 12rem);
+  line-height: 0.82;
+  letter-spacing: -0.08em;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+.pain .section-title {
+  color: var(--muted-strong);
+  font-size: clamp(1.55rem, 3vw, 2.55rem);
+  max-width: 760px;
+}
+.pain .section-sub {
+  font-size: clamp(1rem, 1.45vw, 1.15rem);
+  max-width: 720px;
+  margin-bottom: 1.8rem;
+}
+
+.pain-list { display: flex; flex-direction: column; gap: 0; }
+
+.pain-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.pain-item.visible { opacity: 1; transform: translateY(0); }
+.pain-item:first-child { border-top: 1px solid var(--line); }
+
+.pain-text-wrap {}
+
+.pain-title {
+  font-family: 'Sora', sans-serif; font-weight: 800;
+  font-size: clamp(1.45rem, 2.8vw, 2.15rem);
+  color: var(--white); line-height: 1;
+  letter-spacing: -0.04em; margin-bottom: 0.6rem;
+}
+
+.pain-body { font-size: clamp(0.98rem, 1.35vw, 1.08rem); color: var(--muted); font-weight: 400; line-height: 1.55; max-width: 760px; }
+
+/* ── FEATURES — typographic scroll cards ── */
+.features {
+  padding: 7rem 6%;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.features::before {
+  content: '';
+  position: absolute;
+  inset: 4rem 2vw auto;
+  height: 260px;
+  background: radial-gradient(ellipse at top right, rgba(255,255,255,0.05), transparent 68%);
+  pointer-events: none;
+}
+.features .section-title,
+.features .feat-title { color: var(--white); }
+.features .section-sub,
+.features .feat-body { color: var(--muted); }
+.features .section-title { font-size: clamp(3rem, 6.6vw, 6rem); }
+
+.feat-list { display: flex; flex-direction: column; gap: 0; }
+
+.feat-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 2.8rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.feat-item.visible { opacity: 1; transform: translateY(0); }
+.feat-item:first-child { border-top: 1px solid var(--line); }
+
+.feat-left {}
+
+.feat-title {
+  font-family: 'Sora', sans-serif; font-weight: 800;
+  font-size: clamp(2rem, 4.4vw, 3.45rem);
+  color: var(--white); letter-spacing: -0.04em;
+  line-height: 1; margin-bottom: 0.75rem;
+}
+
+.feat-body { font-size: clamp(1.08rem, 1.55vw, 1.22rem); color: var(--muted); font-weight: 400; line-height: 1.65; max-width: 680px; }
+
+@media (max-width: 640px) {
+  .feat-item { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  body { font-size: 19px; }
+  .who-item {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+}
+
+/* ── WHO — big typographic horizontal scroll ── */
+.who { padding: 7rem 6%; max-width: 1100px; margin: 0 auto; }
+
+.who-list { display: flex; flex-direction: column; gap: 0; }
+
+.who-item {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) 1fr;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 2.1rem 0;
+  border-bottom: 1px solid var(--line);
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  cursor: default;
+}
+.who-item.visible { opacity: 1; transform: translateX(0); }
+.who-item:first-child { border-top: 1px solid var(--line); }
+.who-item:hover .who-name { color: var(--orange); }
+.who-item:hover .who-desc { opacity: 1; }
+
+.who-name {
+  font-family: 'Sora', sans-serif; font-weight: 800;
+  font-size: clamp(2.05rem, 4vw, 3.2rem);
+  color: var(--white); letter-spacing: -0.04em;
+  line-height: 1.08; transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.who-desc {
+  font-size: clamp(1.05rem, 1.5vw, 1.22rem); color: var(--muted); font-weight: 400;
+  opacity: 0.84; transition: opacity 0.2s;
+  padding-bottom: 0.1rem;
+}
+
+/* PT QUOTE */
+.pt-section { padding: 6rem 6%; max-width: 900px; margin: 0 auto; }
+.pt-card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 24px; padding: 3rem 3.5rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 70px rgba(29,29,31,0.08);
+}
+.pt-label { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.2rem; }
+.pt-quote {
+  font-family: 'Sora', sans-serif; font-weight: 700;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem); color: var(--white);
+  line-height: 1.32; letter-spacing: -0.025em; margin-bottom: 1.5rem;
+}
+.pt-quote::before { content: '\201C'; color: var(--orange); }
+.pt-quote::after  { content: '\201D'; color: var(--orange); }
+.pt-name { font-weight: 700; font-size: 1.08rem; color: var(--white); }
+.pt-title-text { font-size: 1rem; color: var(--muted); }
+
+/* TESTIMONIALS */
+.testimonials { padding: 6rem 6%; max-width: 1100px; margin: 0 auto; }
+.test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+.test-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; box-shadow: 0 18px 48px rgba(29,29,31,0.06); backdrop-filter: blur(14px); }
+.stars { color: var(--gold); font-size: 1rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
+.test-quote { font-size: 1.08rem; color: var(--off-white); font-style: italic; line-height: 1.65; margin-bottom: 1rem; font-weight: 400; }
+.test-quote::before { content: '\201C'; } .test-quote::after { content: '\201D'; }
+.test-author { font-size: 1rem; color: var(--muted); }
+.test-author strong { color: var(--off-white); font-weight: 500; }
+
+/* PRICING */
+.pricing { padding: 7rem 6%; max-width: 780px; margin: 0 auto; text-align: center; }
+.price-card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 24px; padding: 3.5rem 2.5rem; margin-top: 3rem; position: relative; overflow: hidden;
+  box-shadow: 0 24px 70px rgba(29,29,31,0.08);
+  backdrop-filter: blur(16px);
+}
+.price-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--line); }
+.price-badge { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(255,255,255,0.04); border: 1px solid var(--line); color: var(--muted-strong); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.42rem 1rem; border-radius: 100px; margin-bottom: 1.5rem; }
+.price-name { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; text-transform: none; color: var(--white); margin-bottom: 0.5rem; }
+.price-lead { margin: 1.4rem 0 1.2rem; }
+.price-lead .price-amount { font-size: clamp(5rem, 12vw, 8rem); }
+.price-lead .price-period { font-size: clamp(1.25rem, 2vw, 1.6rem); color: var(--off-white); }
+.price-note { color: var(--muted); font-size: 1.05rem; margin-top: 0.45rem; }
+.price-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem 0.9rem; margin: 0.55rem 0 1.2rem; }
+.price-option { border: 0; border-radius: 0; padding: 0; background: transparent; display: inline-flex; align-items: baseline; gap: 0.25rem; color: var(--muted); }
+.price-amount { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 4.4rem; color: var(--white); letter-spacing: -0.05em; line-height: 1; }
+.price-cents { font-size: 0.36em; color: var(--muted); }
+.price-option .price-amount { font-size: 0.82rem; letter-spacing: -0.02em; color: var(--muted); }
+.price-option .price-cents { font-size: 1em; color: var(--muted); }
+.price-period { font-size: 1.16rem; color: var(--muted); font-weight: 400; margin-bottom: 0.5rem; }
+.price-option .price-period { margin-bottom: 0; font-size: 0.82rem; }
+.price-trial { display: inline-block; background: rgba(255,255,255,0.04); border: 1px solid var(--line); color: var(--muted-strong); font-size: 1rem; padding: 0.48rem 1.1rem; border-radius: 100px; margin: 0.8rem 0 2rem; }
+.price-features { list-style: none; text-align: left; margin-bottom: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+@media (max-width:760px) { .price-features { grid-template-columns: 1fr; } }
+.price-features li { font-size: 1.08rem; color: var(--off-white); display: flex; align-items: center; gap: 0.5rem; }
+.price-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+.price-guarantee { font-size: 1rem; color: var(--muted); margin-top: 1.2rem; }
+
+/* EARLY ACCESS */
+.early-access { padding: 7rem 6%; max-width: 820px; margin: 0 auto; text-align: center; }
+.access-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  margin-top: 3rem;
+  box-shadow: 0 24px 70px rgba(29,29,31,0.08);
+  backdrop-filter: blur(16px);
+}
+.access-form { display: grid; gap: 1rem; max-width: 560px; margin: 0 auto; text-align: left; }
+.access-form label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.access-row { display: grid; grid-template-columns: 1fr auto; gap: 0.75rem; }
+.access-form input {
+  width: 100%;
+  min-height: 54px;
+  border-radius: 100px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  font: inherit;
+  font-size: 1rem;
+  padding: 0 1.25rem;
+}
+.access-form input::placeholder { color: rgba(220,233,247,0.42); }
+.access-form input:focus {
+  outline: 2px solid rgba(142,202,230,0.38);
+  outline-offset: 2px;
+}
+.access-note,
+.access-status {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.access-status { display: none; font-weight: 600; }
+.access-status.success { color: #a7f3d0; }
+.access-status.error { color: #fecaca; }
+.access-unlocked {
+  display: none;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.access-unlocked p {
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 560px) {
+  .access-row { grid-template-columns: 1fr; }
+  .access-card { padding: 2.25rem 1.25rem; }
+}
+
+/* FINAL CTA */
+.final-cta { padding: 8rem 6%; max-width: 780px; margin: 0 auto; text-align: center; }
+.final-cta h2 { font-family: 'Sora', sans-serif; font-weight: 800; font-size: clamp(2.3rem, 5vw, 4.2rem); line-height: 1.02; letter-spacing: -0.04em; color: var(--white); margin-bottom: 1.2rem; }
+.final-cta p { font-size: clamp(1.18rem, 1.8vw, 1.35rem); color: var(--muted-strong); font-weight: 400; margin-bottom: 2.5rem; max-width: 620px; margin-left: auto; margin-right: auto; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--line); padding: 2rem 6%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 1rem; color: var(--muted); max-width: 1100px; margin: 0 auto; }
+.footer-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--white); }
+.footer-logo span { color: var(--orange); }
+
+.divider { max-width: 1100px; margin: 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(29,29,31,0.12), transparent); }
+
+/* ── SCROLL REVEAL base animations ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { animation: fadeUp 0.75s ease forwards; }
+.d1{animation-delay:0.05s;opacity:0} .d2{animation-delay:0.18s;opacity:0} .d3{animation-delay:0.32s;opacity:0} .d4{animation-delay:0.48s;opacity:0}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/logo.png" alt="STRIVE PT Logo" class="logo-img">
+    <div>
+      <div class="logo-text">STRIVE</div>
+      <div class="logo-sub">Physical Therapy · Las Vegas</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <div class="nav-dropdown">
+      <a href="/#services">Services</a>
+      <div class="dropdown-menu">
+        <a href="/wellness.html">Wellness Classes</a>
+        <a href="/stroke.html">Stroke Rehab</a>
+        <a href="/sci.html">SCI Physical Therapy</a>
+        <a href="/vestibular-rehab.html">Vestibular Rehab</a>
+        <a href="/fnd.html">FND Rehab</a>
+      </div>
+    </div>
+    <a href="/private.html">Pricing</a>
+    <div class="nav-dropdown">
+      <a href="#">Resources</a>
+      <div class="dropdown-menu">
+        <a href="/private.html">Why Choose STRIVE</a>
+        <a href="https://open.spotify.com/show/2nbFBV45QpM37SAdHtobgF?si=Gns3Ft-7SgCNdGbmnOcpag" target="_blank" rel="noopener">Podcast</a>
+        <a href="/insights">Articles</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="#">Clinicians</a>
+      <div class="dropdown-menu">
+        <a href="https://striveptlv.com/moneymanagement/">STRIVE Money Rehab</a>
+        <a href="/vo">Vestibular App</a>
+        <a href="/talk/" aria-current="page">STRIVE Talk</a>
+      </div>
+    </div>
+    <a href="#early-access" class="nav-cta">Start Early Access</a>
+  </div>
+  <div class="nav-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" onclick="toggleMenu(false)">Home</a>
+  <a href="/about.html" onclick="toggleMenu(false)">About</a>
+  <div class="mob-dropdown">
+    <div class="mob-dropdown-toggle" onclick="toggleMobileDropdown('servicesItems', this.querySelector('.mob-arrow'))">
+      Services <span class="mob-arrow">›</span>
+    </div>
+    <div class="mob-dropdown-items" id="servicesItems">
+      <a href="/wellness.html" onclick="toggleMenu(false)">Wellness Classes</a>
+      <a href="/stroke.html" onclick="toggleMenu(false)">Stroke Rehab</a>
+      <a href="/sci.html" onclick="toggleMenu(false)">SCI Physical Therapy</a>
+      <a href="/vestibular-rehab.html" onclick="toggleMenu(false)">Vestibular Rehab</a>
+      <a href="/fnd.html" onclick="toggleMenu(false)">FND Rehab</a>
+    </div>
+  </div>
+  <a href="/private.html" onclick="toggleMenu(false)">Pricing</a>
+  <div class="mob-dropdown">
+    <div class="mob-dropdown-toggle" onclick="toggleMobileDropdown('patientResourceItems', this.querySelector('.mob-arrow'))">
+      Resources <span class="mob-arrow">›</span>
+    </div>
+    <div class="mob-dropdown-items" id="patientResourceItems">
+      <a href="/private.html" onclick="toggleMenu(false)">Why Choose STRIVE</a>
+      <a href="https://open.spotify.com/show/2nbFBV45QpM37SAdHtobgF?si=Gns3Ft-7SgCNdGbmnOcpag" target="_blank" rel="noopener">Podcast</a>
+      <a href="/insights" onclick="toggleMenu(false)">Articles</a>
+    </div>
+  </div>
+  <div class="mob-dropdown">
+    <div class="mob-dropdown-toggle" onclick="toggleMobileDropdown('cliniciansItems', this.querySelector('.mob-arrow'))">
+      Clinicians <span class="mob-arrow">›</span>
+    </div>
+    <div class="mob-dropdown-items" id="cliniciansItems">
+      <a href="https://striveptlv.com/moneymanagement/" onclick="toggleMenu(false)">STRIVE Money Rehab</a>
+      <a href="/vo" onclick="toggleMenu(false)">Vestibular App</a>
+      <a href="/talk/" onclick="toggleMenu(false)" aria-current="page">STRIVE Talk</a>
+    </div>
+  </div>
+  <a href="#early-access" class="mob-cta" onclick="toggleMenu(false)">Start Early Access</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="pill fade-up">Created by a Therapist</div>
+  <h1 class="fade-up d1">Finally, an AAC tool<br>designed for <em>real life</em></h1>
+  <p class="hero-sub fade-up d2">Strive Talk turns any smartphone into a <strong>professional-grade communication device</strong> — no bulky hardware, no stigma, no limits. Just tap and speak.</p>
+  <div class="cta-group fade-up d3">
+    <a href="#early-access" class="btn-primary">Start Early Access →</a>
+    <a href="#features" class="btn-ghost">See How It Works</a>
+  </div>
+  <div class="hero-trust fade-up d4">
+    <span class="trust-item">Works offline</span>
+    <span class="trust-item">One-handed operation</span>
+    <span class="trust-item">Clinically informed</span>
+  </div>
+  <div class="mockup-wrap fade-up d4">
+    <div class="mockup-glow"></div>
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-status"><span>9:41</span><span>●●●</span></div>
+        <div class="phone-appbar">
+          <div class="phone-appbar-logo">ST</div>
+          <span class="phone-appbar-title">Strive Talk</span>
+        </div>
+        <div class="yes-no-grid">
+          <div class="choice-card choice-yes"><span class="icon">👍</span><span>Yes</span></div>
+          <div class="choice-card choice-no"><span class="icon">👎</span><span>No</span></div>
+        </div>
+        <div class="phone-section-label">Social / Conversational</div>
+        <div class="card-grid">
+          <div class="comm-card cc-blue"><span class="icon">👋</span>Hello</div>
+          <div class="comm-card cc-coral"><span class="icon">👋</span>Goodbye</div>
+          <div class="comm-card cc-teal"><span class="icon">🙏</span>Please</div>
+          <div class="comm-card cc-gold"><span class="icon">🙏</span>Thank you</div>
+        </div>
+        <div class="speak-bar">
+          <span>🔊 "I need water"</span>
+          <button class="speak-btn">SPEAK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <h2 class="section-title">Tap. Speak.<br>Keep going.</h2>
+  <p class="section-sub">Strive Talk was engineered around one question: what does a patient with mobility limitations actually need to communicate freely?</p>
+
+  <div class="feat-list">
+    <div class="feat-item">
+      <div class="feat-left">
+        <div class="feat-title">Tap-to-Speak</div>
+        <div class="feat-body">One tap on any card and the app speaks it aloud — instantly, naturally. No typing. No menus. No delay.</div>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-left">
+        <div class="feat-title">Fully Customizable Cards</div>
+        <div class="feat-body">Build a personal library of words and phrases. Color-code by category. Add emojis for fast visual recognition.</div>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-left">
+        <div class="feat-title">Single-Hand Operation</div>
+        <div class="feat-body">Every interaction is designed for one finger, one thumb, or even a stylus. No pinching, no swiping, no two-handed combos.</div>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-left">
+        <div class="feat-title">Offline Support</div>
+        <div class="feat-body">Designed to keep key communication cards available after setup, so weak connections do not stop every interaction.</div>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-left">
+        <div class="feat-title">Voice Customization</div>
+        <div class="feat-body">13 voice languages, adjustable pitch and speed. Settings are remembered automatically — set it and forget it.</div>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-left">
+        <div class="feat-title">Privacy-Minded</div>
+        <div class="feat-body">Built to minimize setup friction and keep communication simple without asking patients to manage a complicated account flow.</div>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-left">
+        <div class="feat-title">Accidental-Delete Protection</div>
+        <div class="feat-body">Cards can only be removed in a deliberate delete mode — essential for users with motor control challenges.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHO IT'S FOR -->
+<section class="who">
+  <p class="section-label">Who It's For</p>
+  <h2 class="section-title">Built for patients,<br>loved by caregivers</h2>
+  <p class="section-sub">Any patient who needs to communicate and wants a tool that gets out of their way.</p>
+
+  <div class="who-list">
+    <div class="who-item">
+      <div class="who-name">Stroke Survivors</div>
+      <div class="who-desc">Aphasia, dysarthria, and motor speech disorders</div>
+    </div>
+    <div class="who-item">
+      <div class="who-name">ALS / MND</div>
+      <div class="who-desc">Progressive loss of speech and motor control</div>
+    </div>
+    <div class="who-item">
+      <div class="who-name">Cerebral Palsy</div>
+      <div class="who-desc">Motor speech disorders, limited hand function</div>
+    </div>
+    <div class="who-item">
+      <div class="who-name">Autism Spectrum</div>
+      <div class="who-desc">Non-verbal and minimally verbal individuals</div>
+    </div>
+    <div class="who-item">
+      <div class="who-name">Therapists &amp; SLPs</div>
+      <div class="who-desc">Extend communication support beyond the clinic</div>
+    </div>
+    <div class="who-item">
+      <div class="who-name">Caregivers &amp; Family</div>
+      <div class="who-desc">Easy setup, no training required</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PAIN SECTION -->
+<section class="pain">
+  <p class="section-label">THE PROBLEM</p>
+  <h2 class="section-title">With traditional AAC device</h2>
+  <p class="section-sub">Every day in the clinic, we see the same story: patients who need to communicate, stuck fighting their tools instead of focusing on recovery. Part of the problem is cost: many traditional AAC devices run $3,000-$8,000.</p>
+
+  <div class="pain-list">
+    <div class="pain-item">
+      <div class="pain-text-wrap">
+        <div class="pain-title">Too heavy to carry</div>
+        <div class="pain-body">Patients already managing wheelchairs, walkers, and mobility aids don't need another bulky device weighing them down.</div>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-text-wrap">
+        <div class="pain-title">Demands two hands</div>
+        <div class="pain-body">Most AAC hardware assumes full fine motor control — exactly what stroke and mobility patients have lost.</div>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-text-wrap">
+        <div class="pain-title">Creates social stigma</div>
+        <div class="pain-body">Carrying a dedicated medical device signals disability in every room. That stigma stops patients from using the tools they need.</div>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-text-wrap">
+        <div class="pain-title">Costs thousands</div>
+        <div class="pain-body">Dedicated AAC devices can cost $3,000-$8,000. Insurance coverage is uncertain. Cost should never determine whether someone has a voice.</div>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-text-wrap">
+        <div class="pain-title">Complex to set up</div>
+        <div class="pain-body">Long setup processes, professional programming requirements, and confusing interfaces frustrate patients and caregivers.</div>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-text-wrap">
+        <div class="pain-title">Fails without power or Wi-Fi</div>
+        <div class="pain-body">Many solutions require internet connections or frequent charging. Communication needs don't pause for tech problems.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PT QUOTE -->
+<section class="pt-section">
+  <div class="pt-card">
+    <div class="pt-label">From the Creator</div>
+    <p class="pt-quote">As a therapist, I see patients every single day who need to communicate but are let down by the tools available to them. Strive Talk was built to remove every barrier I could see — cost, complexity, bulk, and stigma — so patients can stop fighting their device and start focusing on what matters: being heard.</p>
+    <div class="pt-name">Therapist, Strive PT LV</div>
+    <div class="pt-title-text">Creator of Strive Talk · Las Vegas, NV</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <p class="section-label">Early Users</p>
+  <h2 class="section-title" style="text-align:center">Patients and caregivers<br>finally have a voice</h2>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="test-quote">My husband had a stroke 8 months ago. This app completely changed how he communicates at home. He uses it one-handed and it looks just like any other app on his phone — no one stares anymore.</p>
+      <div class="test-author"><strong>Maria G.</strong> — Caregiver, Las Vegas</div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="test-quote">I've recommended this to three of my stroke patients already. The fact that they can add their own phrases makes it so much more practical than anything I've seen before.</p>
+      <div class="test-author"><strong>Dr. Rachel T.</strong> — Speech-Language Pathologist</div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="test-quote">I was spending a fortune on equipment. Strive Talk does more than my old device and it fits in my pocket. I don't have to explain it to anyone — it just looks like I'm using my phone.</p>
+      <div class="test-author"><strong>James K.</strong> — ALS patient, 58</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <p class="section-label">Pricing</p>
+  <h2 class="section-title">Simple, transparent pricing</h2>
+  <p class="section-sub" style="margin:0 auto;">No surprise fees. No expensive hardware. A fraction of the cost of a traditional AAC device.</p>
+  <div class="price-card">
+    <div class="price-badge">✦ Early Access — Start Today</div>
+    <div class="price-name">Strive Talk</div>
+    <div class="price-lead">
+      <div class="price-amount">$8<span class="price-cents">.33</span></div>
+      <div class="price-period">/ month</div>
+      <div class="price-note">when bought annually</div>
+    </div>
+    <div class="price-options" aria-label="Subscription pricing options">
+      <div class="price-option">
+        <div class="price-amount">$12<span class="price-cents">.99</span></div>
+        <div class="price-period">/ month</div>
+      </div>
+      <div class="price-option">
+        <div class="price-amount">$99<span class="price-cents">.99</span></div>
+        <div class="price-period">/ year</div>
+      </div>
+    </div>
+    <div class="price-trial">Try the current web app before App Store launch</div>
+    <ul class="price-features">
+      <li>Unlimited communication cards</li>
+      <li>Words &amp; phrases libraries</li>
+      <li>13 voice language options</li>
+      <li>Pitch &amp; speed customization</li>
+      <li>Single-hand operation</li>
+      <li>Offline support after setup</li>
+      <li>English &amp; Spanish UI</li>
+      <li>Accidental-delete protection</li>
+      <li>Privacy-minded setup</li>
+    </ul>
+    <a href="#early-access" class="btn-primary" style="font-size:1.05rem;padding:1rem 3rem;">Start Early Access →</a>
+    <p class="price-guarantee">Cancel anytime. Your cards and settings are always yours.</p>
+  </div>
+</section>
+
+<!-- EARLY ACCESS -->
+<section class="early-access" id="early-access">
+  <p class="section-label">Early Access</p>
+  <h2 class="section-title">Unlock Strive Talk once.<br>Use it whenever you need it.</h2>
+  <p class="section-sub" style="margin:0 auto;">Enter your email to open the current web app and get launch updates as the App Store version gets closer. This browser will remember access so you are not asked every visit.</p>
+  <div class="access-card">
+    <form class="access-form" id="access-form" action="https://formspree.io/f/xdajgera" method="POST">
+      <label for="access-email">Email address</label>
+      <div class="access-row" id="access-row">
+        <input id="access-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <button class="btn-primary" id="access-submit" type="submit">Unlock App →</button>
+      </div>
+      <input type="hidden" name="source" value="STRIVE Talk landing page">
+      <p class="access-note" id="access-note">Early access and STRIVE Talk launch updates.</p>
+      <div class="access-status success" id="access-success">You're in. STRIVE Talk is unlocked on this browser.</div>
+      <div class="access-status error" id="access-error">Something did not go through. Please try again in a moment.</div>
+    </form>
+    <div class="access-unlocked" id="access-unlocked">
+      <p>Access is unlocked on this browser.</p>
+      <a href="https://www.talk.striveptlv.com" class="btn-primary" target="_blank" rel="noopener">Open Strive Talk →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Give your patients<br>their voice back.</h2>
+  <p>Strive Talk takes two minutes to set up and works on the phone they already own. Start early access today and follow along as the App Store version gets closer.</p>
+  <a href="#early-access" class="btn-primary" style="font-size:1.1rem;padding:1.1rem 3rem;margin-bottom:1.2rem;">Open Strive Talk Free →</a>
+  <br>
+  <span style="font-size:1rem;color:var(--muted)">talk.striveptlv.com · iPhone · Android · Desktop</span>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Strive<span>Talk</span></div>
+  <div>Created by a Therapist · Strive PT LV · Las Vegas, NV</div>
+  <a href="#early-access" style="color:var(--orange);text-decoration:none;font-size:1rem;">talk.striveptlv.com →</a>
+</footer>
+
+<script>
+const ACCESS_KEY = 'striveTalkAccess';
+const COOKIE_NAME = 'strive_talk_access';
+const accessForm = document.getElementById('access-form');
+const accessRow = document.getElementById('access-row');
+const accessNote = document.getElementById('access-note');
+const accessUnlocked = document.getElementById('access-unlocked');
+const accessSuccess = document.getElementById('access-success');
+const accessError = document.getElementById('access-error');
+const accessSubmit = document.getElementById('access-submit');
+
+function getCookie(name) {
+  return document.cookie
+    .split('; ')
+    .find((row) => row.startsWith(name + '='))
+    ?.split('=')[1];
+}
+
+function rememberAccess() {
+  try {
+    localStorage.setItem(ACCESS_KEY, 'true');
+  } catch (error) {
+    // Some browsers block localStorage; the cookie still handles repeat visits.
+  }
+  document.cookie = COOKIE_NAME + '=true; max-age=' + 60 * 60 * 24 * 180 + '; path=/; SameSite=Lax';
+}
+
+function hasAccess() {
+  try {
+    if (localStorage.getItem(ACCESS_KEY) === 'true') return true;
+  } catch (error) {
+    // Fall back to cookie.
+  }
+  return getCookie(COOKIE_NAME) === 'true';
+}
+
+function showUnlocked() {
+  if (!accessForm) return;
+  accessRow.style.display = 'none';
+  accessForm.querySelector('label').style.display = 'none';
+  accessNote.textContent = 'This browser is already unlocked.';
+  accessSuccess.style.display = 'block';
+  accessError.style.display = 'none';
+  accessUnlocked.style.display = 'block';
+}
+
+if (hasAccess()) {
+  showUnlocked();
+}
+
+if (accessForm) {
+  accessForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    accessError.style.display = 'none';
+    accessSuccess.style.display = 'none';
+    accessSubmit.disabled = true;
+    accessSubmit.textContent = 'Unlocking...';
+
+    try {
+      const response = await fetch(accessForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(accessForm)
+      });
+
+      if (!response.ok) throw new Error('Formspree submission failed');
+
+      rememberAccess();
+      accessForm.reset();
+      showUnlocked();
+    } catch (error) {
+      accessError.style.display = 'block';
+    } finally {
+      accessSubmit.disabled = false;
+      accessSubmit.textContent = 'Unlock App →';
+    }
+  });
+}
+
+// Scroll-reveal with staggered delay per section
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+// Stagger children within each list
+function staggerObserve(selector, baseDelay = 0, step = 80) {
+  document.querySelectorAll(selector).forEach((el, i) => {
+    el.style.transitionDelay = (baseDelay + i * step) + 'ms';
+    observer.observe(el);
+  });
+}
+
+staggerObserve('.pain-item',  0, 90);
+staggerObserve('.feat-item',  0, 75);
+staggerObserve('.who-item',   0, 65);
+
+function toggleMenu(forceState) {
+  const menu = document.getElementById('mobileMenu');
+  const shouldOpen = typeof forceState === 'boolean'
+    ? forceState
+    : !menu.classList.contains('open');
+  menu.classList.toggle('open', shouldOpen);
+}
+
+function toggleMobileDropdown(itemsId, arrowEl) {
+  document.getElementById(itemsId).classList.toggle('open');
+  if (arrowEl) arrowEl.classList.toggle('open');
+}
+
+// Kinetic scroll: hero and key editorial titles
+const scaleTargets = document.querySelectorAll('.hero h1, .features .section-title, .who .section-title, .pain .section-label, .testimonials .section-title');
+
+function onScroll() {
+  scaleTargets.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // progress: 1 when at bottom of viewport, 0 when at center
+    const raw = 1 - (rect.top / vh);
+    const t = Math.max(0, Math.min(1, raw));
+    // scale from 200% → 100% as it scrolls into center
+    const scale = 2 - t;
+    const opacity = Math.min(1, t * 1.6);
+    el.style.transform = `scale(${scale})`;
+    el.style.transformOrigin = 'left center';
+    el.style.opacity = opacity;
+  });
+}
+
+// Set initial state
+scaleTargets.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'scale(2)';
+  el.style.transition = 'transform 0.1s linear, opacity 0.1s linear';
+  el.style.willChange = 'transform, opacity';
+});
+
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+</script>
+</body>
+</html>
